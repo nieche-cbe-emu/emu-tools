@@ -1,0 +1,4399 @@
+[
+ {
+  "name": "VmIoManagerTag",
+  "size": 120,
+  "members": [
+   {
+    "name": "Vm_file_open",
+    "type": "VMFILE (*)(VmFileDevType",
+    "off": 0
+   },
+   {
+    "name": "Vm_file_close",
+    "type": "void (*)(VMFILE)",
+    "off": 4
+   },
+   {
+    "name": "Vm_file_exist",
+    "type": "VMBOOLEAN (*)(VmFileDevType, const VMUINT16 *)",
+    "off": 8
+   },
+   {
+    "name": "Vm_file_direxist",
+    "type": "VMBOOLEAN (*)(VmFileDevType, const VMUINT16 *)",
+    "off": 12
+   },
+   {
+    "name": "Vm_file_read",
+    "type": "VMUINT32 (*)(",
+    "off": 16
+   },
+   {
+    "name": "Vm_file_write",
+    "type": "VMUINT32 (*)(void *, VMUINT32, VMFILE)",
+    "off": 20
+   },
+   {
+    "name": "Vm_file_seek",
+    "type": "VMINT32 (*)(VMFILE, VMINT32, VMINT32)",
+    "off": 24
+   },
+   {
+    "name": "Vm_file_tell",
+    "type": "VMINT32 (*)(VMFILE)",
+    "off": 28
+   },
+   {
+    "name": "Vm_file_getfilesize",
+    "type": "VMINT32 (*)(VMFILE)",
+    "off": 32
+   },
+   {
+    "name": "Vm_file_delete",
+    "type": "VMINT32 (*)(VmFileDevType, const VMUINT16 *)",
+    "off": 36
+   },
+   {
+    "name": "Vm_file_rename",
+    "type": "VMINT32 (*)(VmFileDevType, const VMUINT16 *, const VMUINT16 *)",
+    "off": 40
+   },
+   {
+    "name": "Vm_file_mkdir",
+    "type": "VMINT32 (*)(VmFileDevType, const VMUINT16 *)",
+    "off": 44
+   },
+   {
+    "name": "Vm_file_rmdir",
+    "type": "VMINT32 (*)(VmFileDevType, const VMUINT16 *)",
+    "off": 48
+   },
+   {
+    "name": "Vm_find_first",
+    "type": "VMINT32 (*)(VmFileDevType, const VMUINT16 *, const VMUINT16 *",
+    "off": 52
+   },
+   {
+    "name": "Vm_find_next",
+    "type": "VMINT32 (*)(VmFileDevType, VMINT32, const VMUINT16 *, VMUINT16 *)",
+    "off": 56
+   },
+   {
+    "name": "Vm_find_close",
+    "type": "void (*)(VMINT32)",
+    "off": 60
+   },
+   {
+    "name": "Vm_get_freespace",
+    "type": "VMUINT32 (*)()",
+    "off": 64
+   },
+   {
+    "name": "Vm_get_sdcardStatus",
+    "type": "VMBOOLEAN (*)()",
+    "off": 68
+   },
+   {
+    "name": "Vm_GetFilenameFromPath",
+    "type": "void (*)(VMUINT16 *, VMBOOLEAN, VMUINT16, VMUINT16 *)",
+    "off": 72
+   },
+   {
+    "name": "Vm_file_getMp3Dir",
+    "type": "VMUINT16 *(*)()",
+    "off": 76
+   },
+   {
+    "name": "Vm_file_getMp4Dir",
+    "type": "VMUINT16 *(*)()",
+    "off": 80
+   },
+   {
+    "name": "Vm_file_getPicDir",
+    "type": "VMUINT16 *(*)()",
+    "off": 84
+   },
+   {
+    "name": "Vm_file_getBookDir",
+    "type": "VMUINT16 *(*)()",
+    "off": 88
+   },
+   {
+    "name": "Vm_file_truncate",
+    "type": "VMINT32 (*)(VMINT32)",
+    "off": 92
+   },
+   {
+    "name": "vm_file_RdWt",
+    "type": "VMBOOLEAN (*)(",
+    "off": 96
+   },
+   {
+    "name": "Vm_file_getSysDir",
+    "type": "VMUINT16 *(*)()",
+    "off": 100
+   },
+   {
+    "name": "Vm_fmgr_select_entry",
+    "type": "void (*)(",
+    "off": 104
+   },
+   {
+    "name": "Vm_get_freespace_ex",
+    "type": "VMUINT32 (*)(VmFileDevType)",
+    "off": 108
+   },
+   {
+    "name": "Vm_get_sdcardStatusEx",
+    "type": "VMBOOLEAN (*)()",
+    "off": 112
+   },
+   {
+    "name": "Vm_get_fullname",
+    "type": "void (*)(VmFileDevType, const VMUINT16 *, VMUINT16 *)",
+    "off": 116
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmLcdManagerTag",
+  "size": 380,
+  "members": [
+   {
+    "name": "VMGetCurrMainScreenImage",
+    "type": "VmImageType *(*)()",
+    "off": 0
+   },
+   {
+    "name": "VMGetLCDBuffer",
+    "type": "VMUINT16 *(*)()",
+    "off": 4
+   },
+   {
+    "name": "VM_InvalidateLcd",
+    "type": "void (*)()",
+    "off": 8
+   },
+   {
+    "name": "VMGetCurrFontType",
+    "type": "VmFontType (*)()",
+    "off": 12
+   },
+   {
+    "name": "VMSetCurrFontType",
+    "type": "void (*)(VmFontType)",
+    "off": 16
+   },
+   {
+    "name": "VMGetFontWidth",
+    "type": "VMUINT16 (*)(VMBOOLEAN)",
+    "off": 20
+   },
+   {
+    "name": "VMGetFontHeight",
+    "type": "VMUINT16 (*)(VMBOOLEAN)",
+    "off": 24
+   },
+   {
+    "name": "VMGetStringWidth",
+    "type": "VMUINT16 (*)(VMSTR)",
+    "off": 28
+   },
+   {
+    "name": "VMGetStringHeight",
+    "type": "VMUINT16 (*)(VMSTR)",
+    "off": 32
+   },
+   {
+    "name": "VMDrawString",
+    "type": "void (*)(VMSTR, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 36
+   },
+   {
+    "name": "VMDrawStringEx",
+    "type": "void (*)(VmImageType *, VMSTR, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 40
+   },
+   {
+    "name": "VMDrawStringClipAlign",
+    "type": "VMBOOLEAN (*)(VMSTR, VMUINT16, VMUINT16, VMUINT16, VmAlignType, VMUINT16)",
+    "off": 44
+   },
+   {
+    "name": "VMDrawStringClip",
+    "type": "VMBOOLEAN (*)(VMSTR, VMUINT16, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 48
+   },
+   {
+    "name": "VMDrawStringRect",
+    "type": "VMUINT32 (*)(VMSTR, VMUINT16, VMUINT16, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 52
+   },
+   {
+    "name": "VMDrawLineEx",
+    "type": "VMBOOLEAN (*)(VMUINT16, VMUINT16, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 56
+   },
+   {
+    "name": "VMDrawLine",
+    "type": "VMBOOLEAN (*)(VmPointType, VmPointType, VMUINT16)",
+    "off": 60
+   },
+   {
+    "name": "VMDrawRect",
+    "type": "VMBOOLEAN (*)(VmRectType, VMUINT16)",
+    "off": 64
+   },
+   {
+    "name": "VMDrawRectEx",
+    "type": "VMBOOLEAN (*)(VMUINT16, VMUINT16, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 68
+   },
+   {
+    "name": "VMFillRect",
+    "type": "VMBOOLEAN (*)(VmRectType, VMUINT16)",
+    "off": 72
+   },
+   {
+    "name": "VMFillRectEx",
+    "type": "VMBOOLEAN (*)(VMUINT16, VMUINT16, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 76
+   },
+   {
+    "name": "vMFillRectWithImage",
+    "type": "VMBOOLEAN (*)(VMUINT16, VMUINT16, VMUINT16, VMUINT16, VmImageType *)",
+    "off": 80
+   },
+   {
+    "name": "vMFillRectWithImageEx",
+    "type": "VMBOOLEAN (*)(VmImageType *, VMUINT16, VMUINT16, VMUINT16, VMUINT16, VmImageType *)",
+    "off": 84
+   },
+   {
+    "name": "VMCreateImage",
+    "type": "VMBOOLEAN (*)(VMUINT16, VmImageType *)",
+    "off": 88
+   },
+   {
+    "name": "VMCreateImageFromInRes",
+    "type": "VMBOOLEAN (*)(VMUINT16, VmImageType *)",
+    "off": 92
+   },
+   {
+    "name": "VMDrawImageWithClipEx",
+    "type": "void (*)(VmImageType *, VmImageType *, VMINT16, VMINT16, VMINT16, VMINT16, VMINT16, VMINT16)",
+    "off": 96
+   },
+   {
+    "name": "VMDrawImageClipAndAlphaEx",
+    "type": "void (*)(VmImageType *, VmImageType *, VMINT16, VMINT16, VMINT16, VMINT16, VMINT16, VMINT16)",
+    "off": 100
+   },
+   {
+    "name": "VMDrawImage",
+    "type": "VMBOOLEAN (*)(VmImageType *, VmPointType)",
+    "off": 104
+   },
+   {
+    "name": "VMDrawImageEx",
+    "type": "VMBOOLEAN (*)(VmImageType *, VMUINT16, VMUINT16)",
+    "off": 108
+   },
+   {
+    "name": "VMDrawImageWithAlpha",
+    "type": "VMBOOLEAN (*)(VmImageType *, VmPointType)",
+    "off": 112
+   },
+   {
+    "name": "VMDrawImageWithClip",
+    "type": "VMBOOLEAN (*)(VmImageType *, VmPointType, VmRectType)",
+    "off": 116
+   },
+   {
+    "name": "VMDrawImageWithClip2",
+    "type": "VMBOOLEAN (*)(VmImageType *, VMINT16, VMINT16, VMINT16, VMINT16, VMINT16, VMINT16)",
+    "off": 120
+   },
+   {
+    "name": "VMDrawImageClipAndAlpha",
+    "type": "VMBOOLEAN (*)(VmImageType *, VmPointType, VmRectType)",
+    "off": 124
+   },
+   {
+    "name": "VMDrawImageClipAndAlpha2",
+    "type": "VMBOOLEAN (*)(VmImageType *, VMINT16, VMINT16, VMINT16, VMINT16, VMINT16, VMINT16)",
+    "off": 128
+   },
+   {
+    "name": "VMGetImageWidth",
+    "type": "VMUINT16 (*)(VmImageType *)",
+    "off": 132
+   },
+   {
+    "name": "VMGetImageHeight",
+    "type": "VMUINT16 (*)(VmImageType *)",
+    "off": 136
+   },
+   {
+    "name": "VMDestoryImage",
+    "type": "VMBOOLEAN (*)(VmImageType *)",
+    "off": 140
+   },
+   {
+    "name": "VMIsBacklightOn",
+    "type": "VMBOOLEAN (*)()",
+    "off": 144
+   },
+   {
+    "name": "VMCtrlBacklight",
+    "type": "void (*)(VMBOOLEAN)",
+    "off": 148
+   },
+   {
+    "name": "VMGB2UCS2",
+    "type": "VMUINT16 (*)(VMSTR, VMWSTR, VMUINT16)",
+    "off": 152
+   },
+   {
+    "name": "VMUCS2GB",
+    "type": "VMUINT16 (*)(VMWSTR, VMSTR, VMUINT16)",
+    "off": 156
+   },
+   {
+    "name": "VMWinPointIsInRect",
+    "type": "VMBOOLEAN (*)(VmPointType, VmRectType)",
+    "off": 160
+   },
+   {
+    "name": "vmResGetTxtWithDataPackage",
+    "type": "VMCHAR *(*)(VMUINT32",
+    "off": 164
+   },
+   {
+    "name": "VmResGetDefTxt",
+    "type": "VMCHAR *(*)(VMUINT32)",
+    "off": 168
+   },
+   {
+    "name": "vmResGetTxtForGame",
+    "type": "VMCHAR *(*)(VMUINT32)",
+    "off": 172
+   },
+   {
+    "name": "IMG_InitDataPage",
+    "type": "void (*)(tResource, gm_s16)",
+    "off": 176
+   },
+   {
+    "name": "IMG_InitInnerDataPageEx",
+    "type": "void (*)(tResource)",
+    "off": 180
+   },
+   {
+    "name": "IMG_ReleaseDataPage",
+    "type": "void (*)()",
+    "off": 184
+   },
+   {
+    "name": "IMG_InitDataPageEx",
+    "type": "void (*)(tResource, gm_s16, DF_DataPackage *)",
+    "off": 188
+   },
+   {
+    "name": "IMG_CreateImageFormIdEx",
+    "type": "VmImageType *(*)(gm_u32, DF_DataPackage *, VmImageType *)",
+    "off": 192
+   },
+   {
+    "name": "IMG_CreateImageFormStream",
+    "type": "VmImageType *(*)(",
+    "off": 196
+   },
+   {
+    "name": "VMDrawStandardImage",
+    "type": "void (*)(VMUINT32, VMINT32, VMINT32, VMINT32, VMINT32",
+    "off": 200
+   },
+   {
+    "name": "VMGetStandardImageDimension",
+    "type": "void (*)(VMUINT8 *, VMUINT32, VMUINT8",
+    "off": 204
+   },
+   {
+    "name": "VMGetStandardImageType",
+    "type": "void (*)(VMUINT8 *, VMUINT8 *)",
+    "off": 208
+   },
+   {
+    "name": "VMDrawStandardImageEx",
+    "type": "void (*)(VmImageType *, VMUINT32, VMINT32, VMINT32, VMINT32, VMINT32, VMUINT8 *, VMUINT32, VMUINT8)",
+    "off": 212
+   },
+   {
+    "name": "vMDrawStringBorder",
+    "type": "void (*)(VMSTR, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 216
+   },
+   {
+    "name": "vMDrawStringClipAlignBorder",
+    "type": "VMBOOLEAN (*)(VMSTR, VMUINT16, VMUINT16, VMUINT16, VmAlignType, VMUINT16)",
+    "off": 220
+   },
+   {
+    "name": "vMDrawStringClipBorder",
+    "type": "VMBOOLEAN (*)(VMSTR, VMUINT16, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 224
+   },
+   {
+    "name": "IMG_InitDataPageTxt",
+    "type": "void (*)(gm_u32)",
+    "off": 228
+   },
+   {
+    "name": "vMImageDecoderAllocMemory",
+    "type": "void (*)(VMUINT32",
+    "off": 232
+   },
+   {
+    "name": "vMImageDecoderFreeMemory",
+    "type": "void (*)(void **)",
+    "off": 236
+   },
+   {
+    "name": "vMImageDecoderGetImageData",
+    "type": "VMUINT8 *(*)(",
+    "off": 240
+   },
+   {
+    "name": "vMImageDecoderRegImageCodecHandler",
+    "type": "void (*)(GddiImageFormat",
+    "off": 244
+   },
+   {
+    "name": "VMGetCharWidth",
+    "type": "VMUINT16 (*)(VMUINT16)",
+    "off": 248
+   },
+   {
+    "name": "vMDrawUcs2String",
+    "type": "void (*)(VMUWSTR, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 252
+   },
+   {
+    "name": "vMDrawUcs2StringBorder",
+    "type": "void (*)(VMUWSTR, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 256
+   },
+   {
+    "name": "vMDrawUcs2StringEx",
+    "type": "void (*)(VmImageType *, VMUWSTR, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 260
+   },
+   {
+    "name": "vMDrawUcs2StringClipAlignBorder",
+    "type": "VMBOOLEAN (*)(VMUWSTR, VMUINT16, VMUINT16, VMUINT16, VmAlignType, VMUINT16)",
+    "off": 264
+   },
+   {
+    "name": "vMDrawUcs2StringClipAlign",
+    "type": "VMBOOLEAN (*)(VMUWSTR, VMUINT16, VMUINT16, VMUINT16, VmAlignType, VMUINT16)",
+    "off": 268
+   },
+   {
+    "name": "vMDrawUcs2StringClipBorder",
+    "type": "VMBOOLEAN (*)(VMUWSTR, VMUINT16, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 272
+   },
+   {
+    "name": "vMDrawUcs2StringClip",
+    "type": "VMBOOLEAN (*)(VMUWSTR, VMUINT16, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 276
+   },
+   {
+    "name": "vMDrawUcs2StringRect",
+    "type": "VMUINT32 (*)(VMUWSTR, VMUINT16, VMUINT16, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 280
+   },
+   {
+    "name": "vMGetUcs2StringWidth",
+    "type": "VMUINT16 (*)(VMUWSTR)",
+    "off": 284
+   },
+   {
+    "name": "vMGetUcs2StringHeight",
+    "type": "VMUINT16 (*)(VMUWSTR)",
+    "off": 288
+   },
+   {
+    "name": "VmAllowBackLight",
+    "type": "void (*)(VMBOOLEAN)",
+    "off": 292
+   },
+   {
+    "name": "VmGetIsNeedRefreshLcd",
+    "type": "VMBOOLEAN (*)()",
+    "off": 296
+   },
+   {
+    "name": "VmSetIsNeedRefreshLcd",
+    "type": "void (*)(VMBOOLEAN)",
+    "off": 300
+   },
+   {
+    "name": "VmLCDInvalidateRectEnable",
+    "type": "void (*)(VMBOOLEAN)",
+    "off": 304
+   },
+   {
+    "name": "VmSetVideoIsNeedClosed",
+    "type": "void (*)(VMBOOLEAN)",
+    "off": 308
+   },
+   {
+    "name": "VmGetVideoIsNeedClosed",
+    "type": "VMBOOLEAN (*)()",
+    "off": 312
+   },
+   {
+    "name": "vMDrawUcs2StringRectEx",
+    "type": "void (*)(VMUWSTR, VMUINT16, VMUINT16, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 316
+   },
+   {
+    "name": "vMSetCbeFontDataPtr",
+    "type": "void (*)(",
+    "off": 320
+   },
+   {
+    "name": "vMGetFontHeightEx",
+    "type": "VMUINT16 (*)(VMBOOLEAN, VmFontType)",
+    "off": 324
+   },
+   {
+    "name": "vMGetFontWidthEx",
+    "type": "VMUINT16 (*)(VMBOOLEAN, VmFontType)",
+    "off": 328
+   },
+   {
+    "name": "vMGetStringHeightEx",
+    "type": "VMUINT16 (*)(VMSTR, VmFontType)",
+    "off": 332
+   },
+   {
+    "name": "vMGetStringWidthEx",
+    "type": "VMUINT16 (*)(VMSTR, VmFontType)",
+    "off": 336
+   },
+   {
+    "name": "vMShowStringEx",
+    "type": "void (*)(VmImageType *, VMSTR, VMUINT16, VMUINT16, VMUINT16, VmFontType)",
+    "off": 340
+   },
+   {
+    "name": "vMShowString",
+    "type": "void (*)(VMSTR, VMUINT16, VMUINT16, VMUINT16, VmFontType)",
+    "off": 344
+   },
+   {
+    "name": "vMShowStringClipAlign",
+    "type": "VMBOOLEAN (*)(VMSTR, VMUINT16, VMUINT16, VMUINT16, VmAlignType, VMUINT16, VmFontType)",
+    "off": 348
+   },
+   {
+    "name": "vMShowStringClip",
+    "type": "VMBOOLEAN (*)(VMSTR, VMUINT16, VMUINT16, VMUINT16, VMUINT16, VmFontType)",
+    "off": 352
+   },
+   {
+    "name": "vMShowStringRect",
+    "type": "VMUINT32 (*)(VMSTR, VMUINT16, VMUINT16, VMUINT16, VMUINT16, VMUINT16, VmFontType)",
+    "off": 356
+   },
+   {
+    "name": "vM_InvalidateLcdEx",
+    "type": "void (*)(VMINT32, VMINT32, VMINT32, VMINT32)",
+    "off": 360
+   },
+   {
+    "name": "vMSetFontSize",
+    "type": "void (*)(VMUINT32)",
+    "off": 364
+   },
+   {
+    "name": "vMResetFontSize",
+    "type": "void (*)()",
+    "off": 368
+   },
+   {
+    "name": "vMUTF82UCS2",
+    "type": "VMUINT16 (*)(VMSTR, VMWSTR)",
+    "off": 372
+   },
+   {
+    "name": "vMUCS2UTF8",
+    "type": "VMUINT16 (*)(VMWSTR, VMSTR)",
+    "off": 376
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmSysManagerTag",
+  "size": 460,
+  "members": [
+   {
+    "name": "VMIsSimReady",
+    "type": "VMBOOLEAN (*)()",
+    "off": 0
+   },
+   {
+    "name": "VmSysIsHaveNetWork",
+    "type": "VMBOOLEAN (*)()",
+    "off": 4
+   },
+   {
+    "name": "VMIsSystemReady",
+    "type": "VMBOOLEAN (*)()",
+    "off": 8
+   },
+   {
+    "name": "VMGetOperator",
+    "type": "VmOperatorType (*)()",
+    "off": 12
+   },
+   {
+    "name": "VMGetIMEI",
+    "type": "void (*)(VMSTR, VMUINT32)",
+    "off": 16
+   },
+   {
+    "name": "VMGetIMSI",
+    "type": "void (*)(VMSTR, VMUINT32)",
+    "off": 20
+   },
+   {
+    "name": "VMGetPrjName",
+    "type": "void (*)(VMSTR, VMUINT32)",
+    "off": 24
+   },
+   {
+    "name": "VMGetPrjVersion",
+    "type": "void (*)(VMSTR, VMUINT32)",
+    "off": 28
+   },
+   {
+    "name": "VMIsCallConnect",
+    "type": "VMBOOLEAN (*)()",
+    "off": 32
+   },
+   {
+    "name": "VMIsDCopen",
+    "type": "VMBOOLEAN (*)()",
+    "off": 36
+   },
+   {
+    "name": "VMGetStkCardStatus",
+    "type": "VMBOOLEAN (*)()",
+    "off": 40
+   },
+   {
+    "name": "VMGetActiveSim",
+    "type": "VMUINT16 (*)()",
+    "off": 44
+   },
+   {
+    "name": "VmGetCoolbarlistInit",
+    "type": "VMUINT8 (*)()",
+    "off": 48
+   },
+   {
+    "name": "VmSetFPS",
+    "type": "void (*)(VMUINT32)",
+    "off": 52
+   },
+   {
+    "name": "VmEnterWinClose",
+    "type": "void (*)()",
+    "off": 56
+   },
+   {
+    "name": "vMAudioIsSupportInCb",
+    "type": "VMBOOLEAN (*)()",
+    "off": 60
+   },
+   {
+    "name": "vMAssert",
+    "type": "void (*)(char *, VMUINT32)",
+    "off": 64
+   },
+   {
+    "name": "GetCoolbarDirPath",
+    "type": "VMUINT16 (*)(VMUINT16 *)",
+    "off": 68
+   },
+   {
+    "name": "GetVerByAppID",
+    "type": "VMUINT16 (*)(VMUINT16)",
+    "off": 72
+   },
+   {
+    "name": "GetCoolBarFullPath",
+    "type": "void (*)(VMUINT16 *, const char *)",
+    "off": 76
+   },
+   {
+    "name": "vMGSenserIsSupportInCb",
+    "type": "VMBOOLEAN (*)()",
+    "off": 80
+   },
+   {
+    "name": "VmSendMsg",
+    "type": "VMBOOLEAN (*)(VMUINT16, VMUINT32, void *)",
+    "off": 84
+   },
+   {
+    "name": "vMGetKeyNum",
+    "type": "VMUINT16 (*)()",
+    "off": 88
+   },
+   {
+    "name": "vMIsSupportTP",
+    "type": "VMBOOLEAN (*)()",
+    "off": 92
+   },
+   {
+    "name": "CDownGetCompany",
+    "type": "void (*)(VMUINT8 *, VMUINT16)",
+    "off": 96
+   },
+   {
+    "name": "CDownGetServicePhone",
+    "type": "void (*)(VMUINT8 *, VMUINT16)",
+    "off": 100
+   },
+   {
+    "name": "vMIsSupportIdleMenu",
+    "type": "VMBOOLEAN (*)()",
+    "off": 104
+   },
+   {
+    "name": "vMSendSms",
+    "type": "VMBOOLEAN (*)(VMUINT8 *, VMUINT8, VMUINT8 *, VMUINT16, VMBOOLEAN, SmSCallback)",
+    "off": 108
+   },
+   {
+    "name": "VmMakeCall",
+    "type": "VMBOOLEAN (*)(VMUINT8 *, VMUINT16)",
+    "off": 112
+   },
+   {
+    "name": "CDownGetData",
+    "type": "VMUINT32 (*)(",
+    "off": 116
+   },
+   {
+    "name": "GetCoolBarKernelCurrentVersion",
+    "type": "VMUINT8 (*)()",
+    "off": 120
+   },
+   {
+    "name": "CoolBar_DownLoad_GetFile",
+    "type": "VMBOOLEAN (*)(VMUINT16 *, char *, DownLoadStateCallBackType)",
+    "off": 124
+   },
+   {
+    "name": "CoolBar_DownLoad_Stop",
+    "type": "void (*)()",
+    "off": 128
+   },
+   {
+    "name": "vmDlGetCurrAppId",
+    "type": "VMUINT16 (*)()",
+    "off": 132
+   },
+   {
+    "name": "vmSysIsVisibleApp",
+    "type": "VMBOOLEAN (*)(VMUINT16)",
+    "off": 136
+   },
+   {
+    "name": "cDownSetForceUpdate",
+    "type": "void (*)()",
+    "off": 140
+   },
+   {
+    "name": "cDownGetModeAndVersion",
+    "type": "void (*)(VMUINT8 *, VMUINT16 *)",
+    "off": 144
+   },
+   {
+    "name": "mmiDynamicSetForceUpdate",
+    "type": "void (*)()",
+    "off": 148
+   },
+   {
+    "name": "mmiDunamicGetModeAndVersion",
+    "type": "void (*)(VMUINT8 *, VMUINT16 *)",
+    "off": 152
+   },
+   {
+    "name": "vMSwitchLog",
+    "type": "void (*)(VMBOOLEAN)",
+    "off": 156
+   },
+   {
+    "name": "Coolbar_GetResStatus",
+    "type": "VMBOOLEAN (*)(VMUINT16)",
+    "off": 160
+   },
+   {
+    "name": "coolbar_Update_Tfold",
+    "type": "VMBOOLEAN (*)(VMUINT16 *)",
+    "off": 164
+   },
+   {
+    "name": "CoolBar_EnterDmIn",
+    "type": "void (*)()",
+    "off": 168
+   },
+   {
+    "name": "vmInputText",
+    "type": "VMBOOLEAN (*)(CBInputTextCallback",
+    "off": 172
+   },
+   {
+    "name": "vmInputPassword",
+    "type": "VMBOOLEAN (*)(CBInputTextCallback, CBInputTextParam *)",
+    "off": 176
+   },
+   {
+    "name": "vmInputClose",
+    "type": "void (*)()",
+    "off": 180
+   },
+   {
+    "name": "vmInputIsOpen",
+    "type": "VMBOOLEAN (*)()",
+    "off": 184
+   },
+   {
+    "name": "VmRand",
+    "type": "int (*)()",
+    "off": 188
+   },
+   {
+    "name": "VmSrand",
+    "type": "void (*)(",
+    "off": 192
+   },
+   {
+    "name": "VmGetSmsCenterNum",
+    "type": "VMBOOLEAN (*)(VMUINT8 *, VMUINT16)",
+    "off": 196
+   },
+   {
+    "name": "VmGetPrjCustom",
+    "type": "void (*)(VMSTR, VMUINT32)",
+    "off": 200
+   },
+   {
+    "name": "GetNetInfo",
+    "type": "VMUINT8 (*)(",
+    "off": 204
+   },
+   {
+    "name": "VmGetCbNum",
+    "type": "VMUINT16 (*)()",
+    "off": 208
+   },
+   {
+    "name": "LzssEncode",
+    "type": "void (*)(VMUINT8 *, VMUINT32, VMUINT8 *",
+    "off": 212
+   },
+   {
+    "name": "LzssDecode",
+    "type": "void (*)(VMUINT8 *, VMUINT32, VMUINT8 *, VMUINT32 *)",
+    "off": 216
+   },
+   {
+    "name": "UpdateDmenu",
+    "type": "void (*)()",
+    "off": 220
+   },
+   {
+    "name": "UpdateCDownmenu",
+    "type": "void (*)()",
+    "off": 224
+   },
+   {
+    "name": "CbGetPlatfomName",
+    "type": "VMCHAR *(*)()",
+    "off": 228
+   },
+   {
+    "name": "VmInnerAppInfo",
+    "type": "VMBOOLEAN (*)(",
+    "off": 232
+   },
+   {
+    "name": "VmGetInnerAppIcon",
+    "type": "VMBOOLEAN (*)(VMUINT16, VMUINT8 *)",
+    "off": 236
+   },
+   {
+    "name": "CDownGetAppType",
+    "type": "VMUINT8 (*)(VMUINT16)",
+    "off": 240
+   },
+   {
+    "name": "vmSetGQQRunings",
+    "type": "void (*)(VMINT8)",
+    "off": 244
+   },
+   {
+    "name": "vmGetGQQRunings",
+    "type": "VMINT8 (*)()",
+    "off": 248
+   },
+   {
+    "name": "vmGetQQAddress",
+    "type": "void (*)(VMUINT32 *, VMUINT32 *)",
+    "off": 252
+   },
+   {
+    "name": "VmGetScreenSize",
+    "type": "VMUINT8 (*)()",
+    "off": 256
+   },
+   {
+    "name": "VmGetPlatformType",
+    "type": "VMUINT8 (*)()",
+    "off": 260
+   },
+   {
+    "name": "VmDlGetIMEI",
+    "type": "void (*)(VMSTR, VMUINT32)",
+    "off": 264
+   },
+   {
+    "name": "VmGetIMSI",
+    "type": "void (*)(VMSTR, VMUINT32)",
+    "off": 268
+   },
+   {
+    "name": "VmGetLoginInfo",
+    "type": "void (*)(",
+    "off": 272
+   },
+   {
+    "name": "VmSetLoginInfo",
+    "type": "void (*)(LOGIN_INFO_T *)",
+    "off": 276
+   },
+   {
+    "name": "VmGetAppNameByIdFromList",
+    "type": "VMBOOLEAN (*)(VMUINT16, VMUINT16 *)",
+    "off": 280
+   },
+   {
+    "name": "VmUnInstallAppbyId",
+    "type": "VMBOOLEAN (*)(VMUINT16)",
+    "off": 284
+   },
+   {
+    "name": "VmGetDMenuFileName",
+    "type": "void (*)(VMUINT16 *)",
+    "off": 288
+   },
+   {
+    "name": "VmGetCDownFileName",
+    "type": "void (*)(VMUINT16 *)",
+    "off": 292
+   },
+   {
+    "name": "VmGetCDownAppUrl",
+    "type": "void (*)(char *, VMUINT8, VMUINT32)",
+    "off": 296
+   },
+   {
+    "name": "VmDlGetPreAppId",
+    "type": "VMUINT16 (*)()",
+    "off": 300
+   },
+   {
+    "name": "VmParseMixDownData",
+    "type": "VMBOOLEAN (*)(VMUINT16 *, VMUINT16 *)",
+    "off": 304
+   },
+   {
+    "name": "CoolBar_DownLoad_CBE",
+    "type": "VMBOOLEAN (*)(VMUINT16 *, char *, VMUINT32, DownLoadStateCallBackType)",
+    "off": 308
+   },
+   {
+    "name": "Coolbar_PreLoadApp",
+    "type": "VMUINT8 (*)(VMUINT16)",
+    "off": 312
+   },
+   {
+    "name": "VmDlGetSpBf",
+    "type": "VMUINT8 *(*)()",
+    "off": 316
+   },
+   {
+    "name": "vMGetGameWinState",
+    "type": "VMUINT8 (*)()",
+    "off": 320
+   },
+   {
+    "name": "VmGetHideText",
+    "type": "VMCHAR *(*)(VMCHAR *)",
+    "off": 324
+   },
+   {
+    "name": "VMPhbMultiSelectEntry",
+    "type": "void (*)(VMCHAR *, VMUINT16, VMUINT16, HandsetSelectCallback)",
+    "off": 328
+   },
+   {
+    "name": "VmSetCurActiveSim",
+    "type": "void (*)(VMUINT8)",
+    "off": 332
+   },
+   {
+    "name": "VmGetAllSimStatus",
+    "type": "void (*)(",
+    "off": 336
+   },
+   {
+    "name": "VmSendMMS",
+    "type": "VMBOOLEAN (*)(VMUINT8 *, VMUINT8, VMUINT8 *, VMUINT16, VMBOOLEAN)",
+    "off": 340
+   },
+   {
+    "name": "VmGetFoucsWin",
+    "type": "VMUINT32 (*)()",
+    "off": 344
+   },
+   {
+    "name": "VmIsWinOpen",
+    "type": "VMBOOLEAN (*)(VMUINT32)",
+    "off": 348
+   },
+   {
+    "name": "VmIsInIdleWin",
+    "type": "VMBOOLEAN (*)()",
+    "off": 352
+   },
+   {
+    "name": "VmIsInnerApp",
+    "type": "VMBOOLEAN (*)(VMUINT16)",
+    "off": 356
+   },
+   {
+    "name": "VmGetInnerAppVer",
+    "type": "VMUINT16 (*)(VMUINT16)",
+    "off": 360
+   },
+   {
+    "name": "VmGetMixMenuLength",
+    "type": "VMUINT32 (*)()",
+    "off": 364
+   },
+   {
+    "name": "VmGetMixMenudata",
+    "type": "VMUINT8 *(*)()",
+    "off": 368
+   },
+   {
+    "name": "VmGetWpayCBMInfo",
+    "type": "void (*)(",
+    "off": 372
+   },
+   {
+    "name": "vMGetCurVerAllInfo",
+    "type": "VMUINT8 *(*)()",
+    "off": 376
+   },
+   {
+    "name": "VmSetFpsSleepFlag",
+    "type": "void (*)(VMBOOLEAN)",
+    "off": 380
+   },
+   {
+    "name": "vmSetSmsCenterNum",
+    "type": "VMBOOLEAN (*)(VMUINT8 *, VMUINT8)",
+    "off": 384
+   },
+   {
+    "name": "vmGetBuildTime",
+    "type": "VMCHAR *(*)()",
+    "off": 388
+   },
+   {
+    "name": "vmGetUsedTimes",
+    "type": "VMUINT32 (*)()",
+    "off": 392
+   },
+   {
+    "name": "VmSysGetBatteryInfo",
+    "type": "void (*)(",
+    "off": 396
+   },
+   {
+    "name": "VmSysSetLcdBright",
+    "type": "void (*)(VMUINT8)",
+    "off": 400
+   },
+   {
+    "name": "VmSysResetLcdBright",
+    "type": "void (*)()",
+    "off": 404
+   },
+   {
+    "name": "VmSysSetPowerSaveMode",
+    "type": "void (*)(VMBOOLEAN)",
+    "off": 408
+   },
+   {
+    "name": "VmGetOperatorMCC",
+    "type": "VMUINT16 (*)()",
+    "off": 412
+   },
+   {
+    "name": "VmGetOperatorMNC",
+    "type": "VMUINT16 (*)()",
+    "off": 416
+   },
+   {
+    "name": "VmGetSupportAppStore",
+    "type": "VMBOOLEAN (*)()",
+    "off": 420
+   },
+   {
+    "name": "cDownGetCompanyEx",
+    "type": "void (*)(VMUINT8, VMUINT8 *, VMUINT16)",
+    "off": 424
+   },
+   {
+    "name": "VmSysGetCurrLcdLightInfo",
+    "type": "void (*)(",
+    "off": 428
+   },
+   {
+    "name": "VmSysStartVibration",
+    "type": "void (*)(VMINT32)",
+    "off": 432
+   },
+   {
+    "name": "VmSysStopVibration",
+    "type": "void (*)()",
+    "off": 436
+   },
+   {
+    "name": "VmSysOpenBrowser",
+    "type": "void (*)(VMUINT16 *)",
+    "off": 440
+   },
+   {
+    "name": "VmSysSetSettingProfile",
+    "type": "void (*)(SETTING_PROFILE, VMUINT16 *, VMUINT16)",
+    "off": 444
+   },
+   {
+    "name": "VmSysGetSettingProfile",
+    "type": "void (*)(SETTING_PROFILE, VMUINT16 *, VMUINT16)",
+    "off": 448
+   },
+   {
+    "name": "VmSysGetSettingProfileName",
+    "type": "void (*)(SETTING_PROFILE, VMUINT16 *, VMUINT16)",
+    "off": 452
+   },
+   {
+    "name": "VmSysSaveContactPerson",
+    "type": "VMBOOLEAN (*)(VMUINT16 *, VMUINT8, VMUINT8 *, VMUINT8, phb_phonebook_type_t)",
+    "off": 456
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmTimeManagerTag",
+  "size": 40,
+  "members": [
+   {
+    "name": "VMStartTimer",
+    "type": "VMUINT16 (*)(VMUINT32, TimerCBPtr, void *)",
+    "off": 0
+   },
+   {
+    "name": "VMStopTimer",
+    "type": "void (*)(VMUINT16)",
+    "off": 4
+   },
+   {
+    "name": "VMGetTickCount",
+    "type": "VMUINT32 (*)()",
+    "off": 8
+   },
+   {
+    "name": "VMGetTotalSeconds",
+    "type": "VMUINT32 (*)()",
+    "off": 12
+   },
+   {
+    "name": "VMGetCurrentTime",
+    "type": "void (*)(",
+    "off": 16
+   },
+   {
+    "name": "VMSysSleep",
+    "type": "void (*)(VMUINT32)",
+    "off": 20
+   },
+   {
+    "name": "VmSetSysTime",
+    "type": "VMBOOLEAN (*)(VMUINT8, VMUINT8, VMUINT8)",
+    "off": 24
+   },
+   {
+    "name": "VmSetSysDate",
+    "type": "VMBOOLEAN (*)(VMUINT16, VMUINT8, VMUINT8)",
+    "off": 28
+   },
+   {
+    "name": "VMIncreaseTime",
+    "type": "void (*)(VmDateTimeType *, VmDateTimeType *, VmDateTimeType *)",
+    "off": 32
+   },
+   {
+    "name": "VMDecreaseTime",
+    "type": "void (*)(VmDateTimeType *, VmDateTimeType *, VmDateTimeType *)",
+    "off": 36
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmCtrlManagerTag",
+  "size": 84,
+  "members": [
+   {
+    "name": "VmPubDrawSoftkeyBar",
+    "type": "void (*)(VmImageType *, VMSTR, VMSTR, VMSTR)",
+    "off": 0
+   },
+   {
+    "name": "VmPubDrawSoftkeyBarEx",
+    "type": "void (*)(VmImageType *, VMSTR, VMSTR, VMSTR, VMUINT16)",
+    "off": 4
+   },
+   {
+    "name": "VmPubDrawWinTitle",
+    "type": "void (*)(VmImageType *, VMSTR)",
+    "off": 8
+   },
+   {
+    "name": "vmPubDrawWinTitleEx",
+    "type": "void (*)(VmImageType *, VMSTR, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 12
+   },
+   {
+    "name": "vmPubTpPressSoftkeyBar",
+    "type": "VMBOOLEAN (*)(VmImageType *, VMSTR, VMINT16, VMINT16, VmSoftType)",
+    "off": 16
+   },
+   {
+    "name": "InitCoolbarListBox",
+    "type": "VMBOOLEAN (*)(",
+    "off": 20
+   },
+   {
+    "name": "InitCoolbarListBoxEx",
+    "type": "VMBOOLEAN (*)(CoolbarListBox **, VMUINT16, Rect, VMUINT8, VMBOOLEAN, CoolbarListBox_callback_func_t)",
+    "off": 24
+   },
+   {
+    "name": "CbPopBox_Init",
+    "type": "void (*)(",
+    "off": 28
+   },
+   {
+    "name": "CbPopBox_InitEx",
+    "type": "void (*)(CB_PopBox **",
+    "off": 32
+   },
+   {
+    "name": "VmPubDrawWinTitleWithColor",
+    "type": "void (*)(VmImageType *, VMSTR, VMUINT16)",
+    "off": 36
+   },
+   {
+    "name": "vmInputText",
+    "type": "VMBOOLEAN (*)(CBInputTextCallback, CBInputTextParam *)",
+    "off": 40
+   },
+   {
+    "name": "vmInputPassword",
+    "type": "VMBOOLEAN (*)(CBInputTextCallback, CBInputTextParam *)",
+    "off": 44
+   },
+   {
+    "name": "vmInputClose",
+    "type": "void (*)()",
+    "off": 48
+   },
+   {
+    "name": "vmInputIsOpen",
+    "type": "VMBOOLEAN (*)()",
+    "off": 52
+   },
+   {
+    "name": "vmInputDummy",
+    "type": "void (*)(void *)",
+    "off": 56
+   },
+   {
+    "name": "vmPubDrawUcs2SoftkeyBar",
+    "type": "void (*)(VmImageType *, VMWSTR, VMWSTR, VMWSTR)",
+    "off": 60
+   },
+   {
+    "name": "vmPubDrawUcs2SoftkeyBarEx",
+    "type": "void (*)(VmImageType *, VMWSTR, VMWSTR, VMWSTR, VMUINT16)",
+    "off": 64
+   },
+   {
+    "name": "vmPubTpPressUcs2SoftkeyBar",
+    "type": "VMBOOLEAN (*)(VmImageType *, VMWSTR, VMINT16, VMINT16, VmSoftType)",
+    "off": 68
+   },
+   {
+    "name": "vmPubDrawUcs2WinTitle",
+    "type": "void (*)(VmImageType *, VMWSTR)",
+    "off": 72
+   },
+   {
+    "name": "vmPubDrawUcs2WinTitleWithColor",
+    "type": "void (*)(VmImageType *, VMWSTR, VMUINT16)",
+    "off": 76
+   },
+   {
+    "name": "vmPubDrawUcs2WinTitleEx",
+    "type": "void (*)(VmImageType *, VMWSTR, VMUINT16, VMUINT16, VMUINT16)",
+    "off": 80
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmMemoryManagerTag",
+  "size": 108,
+  "members": [
+   {
+    "name": "dF_InitMemory",
+    "type": "void (*)(gm_u32)",
+    "off": 0
+   },
+   {
+    "name": "dF_ReleaseMemory",
+    "type": "void (*)()",
+    "off": 4
+   },
+   {
+    "name": "dF_Malloc_In",
+    "type": "VMBOOLEAN (*)(void **, gm_u32)",
+    "off": 8
+   },
+   {
+    "name": "dF_Free",
+    "type": "void (*)(void **)",
+    "off": 12
+   },
+   {
+    "name": "dF_Memory_gc",
+    "type": "void (*)()",
+    "off": 16
+   },
+   {
+    "name": "mF_InitMemoryBlock",
+    "type": "void (*)(",
+    "off": 20
+   },
+   {
+    "name": "mF_MemoryBlock_Malloc",
+    "type": "void *(*)(MemoryBlock *, gm_s32)",
+    "off": 24
+   },
+   {
+    "name": "mF_MemoryBlock_Reset",
+    "type": "void (*)(MemoryBlock *)",
+    "off": 28
+   },
+   {
+    "name": "mF_GetGMemoryBlockPtr",
+    "type": "MemoryBlock *(*)()",
+    "off": 32
+   },
+   {
+    "name": "mF_InitGmemoryBlock",
+    "type": "void (*)(gm_s32)",
+    "off": 36
+   },
+   {
+    "name": "mF_ReleaseGmemoryBlock",
+    "type": "void (*)()",
+    "off": 40
+   },
+   {
+    "name": "mF_resetGmemoryBlock",
+    "type": "void (*)()",
+    "off": 44
+   },
+   {
+    "name": "mF_MallocGmemoryBlock",
+    "type": "void *(*)(gm_s32)",
+    "off": 48
+   },
+   {
+    "name": "mallocBigMen",
+    "type": "void *(*)(int)",
+    "off": 52
+   },
+   {
+    "name": "freeBigMen",
+    "type": "void (*)(void *)",
+    "off": 56
+   },
+   {
+    "name": "DF_Memory_AttachPointer",
+    "type": "void (*)(void **, void **)",
+    "off": 60
+   },
+   {
+    "name": "mF_MemoryBlock_Release",
+    "type": "void (*)(MemoryBlock *)",
+    "off": 64
+   },
+   {
+    "name": "dF_InitMemoryEx",
+    "type": "void (*)(gm_u32)",
+    "off": 68
+   },
+   {
+    "name": "RemallocBigMen",
+    "type": "void *(*)(void *, int)",
+    "off": 72
+   },
+   {
+    "name": "dF_Malloc_debug",
+    "type": "VMBOOLEAN (*)(void **, gm_u32, const char *, int)",
+    "off": 76
+   },
+   {
+    "name": "mallocBigMen_debug",
+    "type": "void *(*)(VMUINT32, const char *, int)",
+    "off": 80
+   },
+   {
+    "name": "getShareMemAlloced",
+    "type": "VMUINT32 (*)()",
+    "off": 84
+   },
+   {
+    "name": "mallocBigMen2",
+    "type": "void *(*)(int)",
+    "off": 88
+   },
+   {
+    "name": "freeBigMen2",
+    "type": "void (*)(void *)",
+    "off": 92
+   },
+   {
+    "name": "GetBlockMemInfo",
+    "type": "void (*)(VMUINT32 *",
+    "off": 96
+   },
+   {
+    "name": "mallocSysMem",
+    "type": "void *(*)(VMUINT32)",
+    "off": 100
+   },
+   {
+    "name": "freeSysMen",
+    "type": "void (*)(void *)",
+    "off": 104
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmBillingManagerTag",
+  "size": 176,
+  "members": [
+   {
+    "name": "BILLING_GetPayNumByAppId",
+    "type": "VMUINT16 (*)(NETAPP_BILLING_APPID_TYPE, NETAPP_BILLING_METHOD_TYPE)",
+    "off": 0
+   },
+   {
+    "name": "BILLING_GetRemainDay",
+    "type": "VMUINT32 (*)(NETAPP_BILLING_APPID_TYPE, NETAPP_BILLING_METHOD_TYPE)",
+    "off": 4
+   },
+   {
+    "name": "BILLING_Pay",
+    "type": "void (*)(NETAPP_BILLING_APPID_TYPE, NETAPP_BILLING_METHOD_TYPE, Billing_callback_func_t)",
+    "off": 8
+   },
+   {
+    "name": "BILLING_PayMoreTimes",
+    "type": "void (*)(NETAPP_BILLING_APPID_TYPE, NETAPP_BILLING_METHOD_TYPE, Billing_callback_func_t, VMUINT16)",
+    "off": 12
+   },
+   {
+    "name": "BILLING_IsRegisterBillingInfo",
+    "type": "VMBOOLEAN (*)(NETAPP_BILLING_APPID_TYPE)",
+    "off": 16
+   },
+   {
+    "name": "BILLING_RegisterBillingInfo",
+    "type": "VMBOOLEAN (*)(NETAPP_BILLING_APPID_TYPE, VMUINT32)",
+    "off": 20
+   },
+   {
+    "name": "BILLING_SetBillingStatus",
+    "type": "VMBOOLEAN (*)(NETAPP_BILLING_APPID_TYPE, NETAPP_BILLING_STATUS_TYPE)",
+    "off": 24
+   },
+   {
+    "name": "BILLING_GetBillingStatus",
+    "type": "NETAPP_BILLING_STATUS_TYPE (*)(NETAPP_BILLING_APPID_TYPE)",
+    "off": 28
+   },
+   {
+    "name": "BILLING_IsNeedPay",
+    "type": "VMBOOLEAN (*)(NETAPP_BILLING_APPID_TYPE)",
+    "off": 32
+   },
+   {
+    "name": "BILLING_IsInTryStatus",
+    "type": "VMBOOLEAN (*)(NETAPP_BILLING_APPID_TYPE)",
+    "off": 36
+   },
+   {
+    "name": "BIllING_OpenBillingPromptWin",
+    "type": "void (*)(NETAPP_BILLING_APPID_TYPE)",
+    "off": 40
+   },
+   {
+    "name": "BILLING_GetTryDay",
+    "type": "VMUINT16 (*)(NETAPP_BILLING_APPID_TYPE)",
+    "off": 44
+   },
+   {
+    "name": "BILLING_PayForCBB",
+    "type": "void (*)(NETAPP_BILLING_APPID_TYPE, VMUINT16, VMUINT32, Billing_callback_func_t)",
+    "off": 48
+   },
+   {
+    "name": "BILLING_PayForPwd",
+    "type": "void (*)(Billing_callback_func_t)",
+    "off": 52
+   },
+   {
+    "name": "BILLING_GetCdownOption5",
+    "type": "VMUINT8 (*)()",
+    "off": 56
+   },
+   {
+    "name": "Billing_SendSpecSms",
+    "type": "VMBOOLEAN (*)(VMUINT16, VMUINT8 *, VMUINT8, VMUINT8 *, VMUINT16, VMBOOLEAN, SmSCallback)",
+    "off": 60
+   },
+   {
+    "name": "Billing_CancelSms",
+    "type": "VMBOOLEAN (*)()",
+    "off": 64
+   },
+   {
+    "name": "CDownIsMonthApp",
+    "type": "VMBOOLEAN (*)(VMUINT16, NETAPP_BILLING_METHOD_TYPE)",
+    "off": 68
+   },
+   {
+    "name": "CDownGetFileNameByAppID",
+    "type": "VMBOOLEAN (*)(VMUINT16, VMUINT8 **, VMUINT8 *, VMUINT16 *)",
+    "off": 72
+   },
+   {
+    "name": "BILLING_GetSmsNum",
+    "type": "VMUINT16 (*)(VMUINT16, VMUINT8)",
+    "off": 76
+   },
+   {
+    "name": "BILLING_NewMonthPay",
+    "type": "VMBOOLEAN (*)(",
+    "off": 80
+   },
+   {
+    "name": "BILLING_NewMonthCancel",
+    "type": "VMBOOLEAN (*)(NewMonthPayInfo *, Billing_callback_func_t)",
+    "off": 84
+   },
+   {
+    "name": "BILLING_CleanAppMonthBillInfo",
+    "type": "VMBOOLEAN (*)(VMUINT16)",
+    "off": 88
+   },
+   {
+    "name": "BILLING_GetValidDayByAppId",
+    "type": "VMUINT16 (*)(NETAPP_BILLING_APPID_TYPE, NETAPP_BILLING_METHOD_TYPE)",
+    "off": 92
+   },
+   {
+    "name": "BILLING_GetBillSmsAddr",
+    "type": "void (*)(VMUINT16, VMUINT16, VMCHAR *)",
+    "off": 96
+   },
+   {
+    "name": "BILLING_GetBillSmsSuf",
+    "type": "void (*)(VMUINT16, VMUINT16, VMCHAR *)",
+    "off": 100
+   },
+   {
+    "name": "BILLING_Pay2",
+    "type": "void (*)(NETAPP_BILLING_APPID_TYPE, NETAPP_BILLING_METHOD_TYPE, Billing_callback_func_t, VMUINT32)",
+    "off": 104
+   },
+   {
+    "name": "BILLING_GetAppUsedStatus",
+    "type": "VMUINT8 (*)(VMUINT16)",
+    "off": 108
+   },
+   {
+    "name": "BILLING_SetAppUsedStatus",
+    "type": "void (*)(VMUINT16, VMUINT8)",
+    "off": 112
+   },
+   {
+    "name": "BILLING_GetPayTipContent",
+    "type": "void (*)(VMUINT16, VMUINT16, VMCHAR *)",
+    "off": 116
+   },
+   {
+    "name": "BILLING_Pay3",
+    "type": "void (*)(NETAPP_BILLING_APPID_TYPE, NETAPP_BILLING_METHOD_TYPE, Billing_callback_func_t, VMUINT32, VMBOOLEAN)",
+    "off": 120
+   },
+   {
+    "name": "BILLING_SendRegisterSms",
+    "type": "VMBOOLEAN (*)(VMCHAR *, VMCHAR *, VMBOOLEAN, Billing_callback_func_t)",
+    "off": 124
+   },
+   {
+    "name": "BILLING_CDownOption8",
+    "type": "VMUINT8 (*)()",
+    "off": 128
+   },
+   {
+    "name": "BILLING_CDownOption9",
+    "type": "VMUINT8 (*)()",
+    "off": 132
+   },
+   {
+    "name": "BILLING_CDownOption10",
+    "type": "VMUINT8 (*)()",
+    "off": 136
+   },
+   {
+    "name": "BILLING_Register",
+    "type": "void (*)(SmSCallback)",
+    "off": 140
+   },
+   {
+    "name": "BILLING_PayForCBB3",
+    "type": "void (*)(NETAPP_BILLING_APPID_TYPE, VMUINT16, VMUINT32, Billing_callback_func_t, VMBOOLEAN)",
+    "off": 144
+   },
+   {
+    "name": "BILLING_IsWPay",
+    "type": "VMBOOLEAN (*)()",
+    "off": 148
+   },
+   {
+    "name": "BILLING_GetPayType",
+    "type": "VMUINT8 (*)(VMUINT16, VMUINT16)",
+    "off": 152
+   },
+   {
+    "name": "BILLING_GetDownLoadFee",
+    "type": "VMUINT8 (*)(VMUINT16)",
+    "off": 156
+   },
+   {
+    "name": "BILLING_GETUsedFee",
+    "type": "VMUINT8 (*)(VMUINT16)",
+    "off": 160
+   },
+   {
+    "name": "BILLING_Pay3InMM",
+    "type": "void (*)(NETAPP_BILLING_APPID_TYPE, NETAPP_BILLING_METHOD_TYPE, Billing_callback_func_t, VMUINT32, VMBOOLEAN)",
+    "off": 164
+   },
+   {
+    "name": "BILLING_PayForCBB3InMM",
+    "type": "void (*)(NETAPP_BILLING_APPID_TYPE, VMUINT16, VMUINT32, Billing_callback_func_t, VMBOOLEAN, VMUINT16, VMCHAR *)",
+    "off": 168
+   },
+   {
+    "name": "BILLING_GetFMMPayTip",
+    "type": "void (*)(NETAPP_BILLING_APPID_TYPE, NETAPP_BILLING_METHOD_TYPE, VMUINT16, VMCHAR *, Billing_callback_func_t)",
+    "off": 172
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmScreenManagerTag",
+  "size": 48,
+  "members": [
+   {
+    "name": "vmSCREEN_ChangeScreen",
+    "type": "void (*)(",
+    "off": 0
+   },
+   {
+    "name": "vmSCREEN_NotifyLoadResource",
+    "type": "void (*)(tScreen *)",
+    "off": 4
+   },
+   {
+    "name": "vmChangeScreen",
+    "type": "void (*)(",
+    "off": 8
+   },
+   {
+    "name": "vmChangeScreenEx",
+    "type": "void (*)(VmScreen *, void *, VMBOOLEAN)",
+    "off": 12
+   },
+   {
+    "name": "vmAddScreen",
+    "type": "void (*)(VmScreen *)",
+    "off": 16
+   },
+   {
+    "name": "vmAddScreenEx",
+    "type": "void (*)(VmScreen *, void *, VMBOOLEAN)",
+    "off": 20
+   },
+   {
+    "name": "vmDeleteScreen",
+    "type": "void (*)(VmScreen *)",
+    "off": 24
+   },
+   {
+    "name": "vmScreenLoadResource",
+    "type": "void (*)(VmScreen *)",
+    "off": 28
+   },
+   {
+    "name": "vmScreenLoadResourceEx",
+    "type": "void (*)(VmScreen *, void *)",
+    "off": 32
+   },
+   {
+    "name": "vmIsScreenFocus",
+    "type": "VMBOOLEAN (*)(VmScreen *)",
+    "off": 36
+   },
+   {
+    "name": "vmIsBottomScreen",
+    "type": "VMBOOLEAN (*)(VmScreen *)",
+    "off": 40
+   },
+   {
+    "name": "vmScreenLogic",
+    "type": "void (*)(VMUINT32, void *)",
+    "off": 44
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmNetManagerTag",
+  "size": 172,
+  "members": [
+   {
+    "name": "OpenChannel",
+    "type": "VMBOOLEAN (*)(char *, NetRequestMethodType, NetCallBackType, VMUINT32 *)",
+    "off": 0
+   },
+   {
+    "name": "SendData",
+    "type": "VMBOOLEAN (*)(VMUINT32, VMUINT32, VMUINT8 *)",
+    "off": 4
+   },
+   {
+    "name": "CloseChannel",
+    "type": "VMBOOLEAN (*)(VMUINT32)",
+    "off": 8
+   },
+   {
+    "name": "GetHttpData",
+    "type": "VMBOOLEAN (*)(char *, NetCallBackType, VMUINT32 *)",
+    "off": 12
+   },
+   {
+    "name": "PostHttpData",
+    "type": "VMBOOLEAN (*)(char *, VMUINT32, VMUINT8 *, NetCallBackType, VMUINT32 *)",
+    "off": 16
+   },
+   {
+    "name": "CancelHttpConnect",
+    "type": "VMBOOLEAN (*)(VMINT32)",
+    "off": 20
+   },
+   {
+    "name": "OpenChannel2",
+    "type": "VMBOOLEAN (*)(char *, NetRequestMethodType, NetCallBackType2, VMUINT32 *)",
+    "off": 24
+   },
+   {
+    "name": "OpenQQChannel",
+    "type": "VMBOOLEAN (*)(char *, NetRequestMethodType, NetCallBackType, VMUINT32 *)",
+    "off": 28
+   },
+   {
+    "name": "VMGetLinkSetNum",
+    "type": "VMUINT8 (*)()",
+    "off": 32
+   },
+   {
+    "name": "VMGetLinkSetNameByIndex",
+    "type": "VMUINT16 (*)(VMUINT8, char *, VMUINT8)",
+    "off": 36
+   },
+   {
+    "name": "VMGetWapIndex",
+    "type": "VMUINT8 (*)()",
+    "off": 40
+   },
+   {
+    "name": "VMGetNetIndex",
+    "type": "VMUINT8 (*)()",
+    "off": 44
+   },
+   {
+    "name": "SetWapIndex",
+    "type": "void (*)(VMUINT8)",
+    "off": 48
+   },
+   {
+    "name": "SetNetIndex",
+    "type": "void (*)(VMUINT8)",
+    "off": 52
+   },
+   {
+    "name": "GetGateWayByIndex",
+    "type": "VMUINT8 *(*)(VMUINT8)",
+    "off": 56
+   },
+   {
+    "name": "GetPortByIndex",
+    "type": "VMUINT16 (*)(VMUINT8)",
+    "off": 60
+   },
+   {
+    "name": "GetApnByIndex",
+    "type": "VMUINT8 *(*)(VMUINT8)",
+    "off": 64
+   },
+   {
+    "name": "GetHttpDataEx",
+    "type": "VMBOOLEAN (*)(char *, NetCallBackType, VMUINT32 *, VMCHAR *, VMCHAR *, VMBOOLEAN, HTTP_PAGE_GETTYPE)",
+    "off": 68
+   },
+   {
+    "name": "OpenChannelEx",
+    "type": "VMBOOLEAN (*)(char *, NetRequestMethodType, NetCallBackType, VMUINT32 *, VMCHAR *, VMBOOLEAN)",
+    "off": 72
+   },
+   {
+    "name": "PostHttpDataEx",
+    "type": "VMBOOLEAN (*)(char *, VMUINT32, VMUINT8 *, NetCallBackType, VMUINT32 *, VMCHAR *, VMCHAR *, VMBOOLEAN, HTTP_PAGE_GETTYPE)",
+    "off": 76
+   },
+   {
+    "name": "GetGprsStatus",
+    "type": "VM_GPRS_STATE_E (*)()",
+    "off": 80
+   },
+   {
+    "name": "SetGprsStatus",
+    "type": "void (*)(VM_GPRS_STATE_E)",
+    "off": 84
+   },
+   {
+    "name": "GetCurApn",
+    "type": "void (*)(VMCHAR *)",
+    "off": 88
+   },
+   {
+    "name": "GetDeactiveFlag",
+    "type": "VMUINT8 (*)()",
+    "off": 92
+   },
+   {
+    "name": "SetDeactiveFlag",
+    "type": "void (*)(VMUINT8)",
+    "off": 96
+   },
+   {
+    "name": "SetStartPos",
+    "type": "VMUINT32 (*)(VMUINT32)",
+    "off": 100
+   },
+   {
+    "name": "GetUAAgent",
+    "type": "void (*)(VMCHAR *)",
+    "off": 104
+   },
+   {
+    "name": "GetWapProfile",
+    "type": "void (*)(VMCHAR *)",
+    "off": 108
+   },
+   {
+    "name": "GetLastNetError",
+    "type": "VMUINT16 (*)()",
+    "off": 112
+   },
+   {
+    "name": "GetHttpMassData",
+    "type": "VMBOOLEAN (*)(char *, NetCallBackType, VMUINT32 *",
+    "off": 116
+   },
+   {
+    "name": "PostHttpMassData",
+    "type": "VMBOOLEAN (*)(char *, VMUINT32, VMUINT8 *, NetCallBackType, VMUINT32 *, MassDataSendingPara *)",
+    "off": 120
+   },
+   {
+    "name": "VMIsWifiReady",
+    "type": "VMBOOLEAN (*)()",
+    "off": 124
+   },
+   {
+    "name": "VMGetGPRSCounter",
+    "type": "void (*)(",
+    "off": 128
+   },
+   {
+    "name": "VmSetSockQueryTime",
+    "type": "void (*)(VMUINT32)",
+    "off": 132
+   },
+   {
+    "name": "VmResetSockQueryTime",
+    "type": "void (*)()",
+    "off": 136
+   },
+   {
+    "name": "VmNetDataReset",
+    "type": "void (*)()",
+    "off": 140
+   },
+   {
+    "name": "VmGetNetData",
+    "type": "void (*)(VMUINT32 *, VMUINT32 *)",
+    "off": 144
+   },
+   {
+    "name": "VmGetFlowMassage",
+    "type": "void (*)(",
+    "off": 148
+   },
+   {
+    "name": "VmClearFlowMassage",
+    "type": "VMBOOLEAN (*)(VMUINT16)",
+    "off": 152
+   },
+   {
+    "name": "VmDeleteFlowMassage",
+    "type": "VMBOOLEAN (*)(VMUINT16)",
+    "off": 156
+   },
+   {
+    "name": "VmGetSingleFlowmsg",
+    "type": "VMBOOLEAN (*)(VMUINT16, FlowMsg **)",
+    "off": 160
+   },
+   {
+    "name": "VmClearAllFlowMassage",
+    "type": "void (*)()",
+    "off": 164
+   },
+   {
+    "name": "VmDeleteAllFlowMassage",
+    "type": "void (*)()",
+    "off": 168
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmUcs2StrManagerTag",
+  "size": 44,
+  "members": [
+   {
+    "name": "VmutStrlenUcs2",
+    "type": "VMUINT16 (*)(const VMUINT16 *)",
+    "off": 0
+   },
+   {
+    "name": "VmutStrcpyUcs2",
+    "type": "VMUINT16 *(*)(VMUINT16 *, const VMUINT16 *)",
+    "off": 4
+   },
+   {
+    "name": "VmutStrcatUcs2",
+    "type": "VMUINT16 *(*)(VMUINT16 *, const VMUINT16 *)",
+    "off": 8
+   },
+   {
+    "name": "VmutExpandStrcpy",
+    "type": "VMUINT16 *(*)(VMUINT16 *, const char *)",
+    "off": 12
+   },
+   {
+    "name": "VmutStrncpyUcs2",
+    "type": "VMUINT16 *(*)(VMUINT16 *, const VMUINT16 *",
+    "off": 16
+   },
+   {
+    "name": "VmutExpandStrncpy",
+    "type": "VMUINT16 *(*)(VMUINT16 *, const char *, const VMUINT32)",
+    "off": 20
+   },
+   {
+    "name": "VmutExpandMemcpy",
+    "type": "void *(*)(void *",
+    "off": 24
+   },
+   {
+    "name": "VmutStrchrUcs2",
+    "type": "VMUINT16 *(*)(const VMUINT16 *, VMUINT16)",
+    "off": 28
+   },
+   {
+    "name": "VmutStrcmpUcs2",
+    "type": "VMINT32 (*)(const VMUINT16 *, const VMUINT16 *)",
+    "off": 32
+   },
+   {
+    "name": "VmutStricmpUcs2",
+    "type": "VMINT32 (*)(const VMUINT16 *, const VMUINT16 *)",
+    "off": 36
+   },
+   {
+    "name": "VmutStrncmpUcs2",
+    "type": "VMINT32 (*)(const VMUINT16 *, const VMUINT16 *, const VMUINT32)",
+    "off": 40
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmDFScriptManagerTag",
+  "size": 88,
+  "members": [
+   {
+    "name": "XS_Init",
+    "type": "Script *(*)()",
+    "off": 0
+   },
+   {
+    "name": "XS_ShutDown",
+    "type": "void (*)()",
+    "off": 4
+   },
+   {
+    "name": "XS_LoadScript",
+    "type": "int (*)(char *",
+    "off": 8
+   },
+   {
+    "name": "XS_RunScripts",
+    "type": "void (*)(int)",
+    "off": 12
+   },
+   {
+    "name": "XS_ResetScript",
+    "type": "void (*)(int)",
+    "off": 16
+   },
+   {
+    "name": "XS_CallScriptFunc",
+    "type": "void (*)(int, char *)",
+    "off": 20
+   },
+   {
+    "name": "XS_InvokeScriptFunc",
+    "type": "void (*)(int, char *)",
+    "off": 24
+   },
+   {
+    "name": "XS_RegisterHostAPIFunc",
+    "type": "void (*)(int, char *, HostAPIFuncPntr)",
+    "off": 28
+   },
+   {
+    "name": "XS_StartScript",
+    "type": "void (*)(int)",
+    "off": 32
+   },
+   {
+    "name": "XS_StopScript",
+    "type": "void (*)(int)",
+    "off": 36
+   },
+   {
+    "name": "XS_PauseScript",
+    "type": "void (*)(int, int)",
+    "off": 40
+   },
+   {
+    "name": "XS_UnpauseScript",
+    "type": "void (*)(int)",
+    "off": 44
+   },
+   {
+    "name": "XS_GetReturnValueAsInt",
+    "type": "int (*)(int)",
+    "off": 48
+   },
+   {
+    "name": "XS_GetReturnValueAsFloat",
+    "type": "float (*)(int)",
+    "off": 52
+   },
+   {
+    "name": "XS_GetReturnValueAsString",
+    "type": "char *(*)(int)",
+    "off": 56
+   },
+   {
+    "name": "XS_ReturnFromHost",
+    "type": "void (*)(int, int)",
+    "off": 60
+   },
+   {
+    "name": "XS_ReturnIntFromHost",
+    "type": "void (*)(int, int, int)",
+    "off": 64
+   },
+   {
+    "name": "XS_ReturnFloatFromHost",
+    "type": "void (*)(int, int, float)",
+    "off": 68
+   },
+   {
+    "name": "XS_ReturnStringFromHost",
+    "type": "void (*)(int, int, char *)",
+    "off": 72
+   },
+   {
+    "name": "XS_GetParamAsInt",
+    "type": "int (*)(int, int)",
+    "off": 76
+   },
+   {
+    "name": "XS_GetParamAsFloat",
+    "type": "float (*)(int, int)",
+    "off": 80
+   },
+   {
+    "name": "XS_GetParamAsString",
+    "type": "char *(*)(int, int)",
+    "off": 84
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmGameLcdManagerTag",
+  "size": 160,
+  "members": [
+   {
+    "name": "CreateImage",
+    "type": "VmImageType *(*)(tResource)",
+    "off": 0
+   },
+   {
+    "name": "DrawImageWithClip",
+    "type": "void (*)(VmImageType *, gm_s16, gm_s16, gm_s16, gm_s16, gm_s16, gm_s16)",
+    "off": 4
+   },
+   {
+    "name": "DrawImageClipAndAlpha",
+    "type": "void (*)(VmImageType *, gm_s16, gm_s16, gm_s16, gm_s16, gm_s16, gm_s16)",
+    "off": 8
+   },
+   {
+    "name": "DrawFullScreen",
+    "type": "void (*)(VmImageType *)",
+    "off": 12
+   },
+   {
+    "name": "DrawNumber",
+    "type": "void (*)(VmImageType *, gm_s32, gm_s16, gm_s16, gm_s16, gm_s16, gm_s16, gm_u8)",
+    "off": 16
+   },
+   {
+    "name": "DrawUI",
+    "type": "void (*)(VmImageType *, gm_s16, gm_s16, gm_s16, gm_s16, gm_s16)",
+    "off": 20
+   },
+   {
+    "name": "DrawUIFourXRepeat",
+    "type": "void (*)(VmImageType *, gm_s16, gm_s16, gm_s16, gm_s16)",
+    "off": 24
+   },
+   {
+    "name": "DrawUISingleRepeat",
+    "type": "void (*)(VmImageType *, gm_s16, gm_s16, gm_s16, gm_s16)",
+    "off": 28
+   },
+   {
+    "name": "DrawUIHorizontal",
+    "type": "void (*)(VmImageType *, gm_s16, gm_s16, gm_s16)",
+    "off": 32
+   },
+   {
+    "name": "DrawString",
+    "type": "void (*)(char *, gm_s16, gm_s16, gm_s16, gm_u32)",
+    "off": 36
+   },
+   {
+    "name": "DrawStringEx",
+    "type": "void (*)(VmImageType *, char *, gm_s16, gm_s16, gm_s16, gm_u32)",
+    "off": 40
+   },
+   {
+    "name": "ReleaseImage",
+    "type": "void (*)(VmImageType *)",
+    "off": 44
+   },
+   {
+    "name": "SetClip",
+    "type": "void (*)(gm_s16, gm_s16, gm_s16, gm_s16)",
+    "off": 48
+   },
+   {
+    "name": "IMG_GetHeight",
+    "type": "gm_u16 (*)(VmImageType *)",
+    "off": 52
+   },
+   {
+    "name": "IMG_GetWidth",
+    "type": "gm_u16 (*)(VmImageType *)",
+    "off": 56
+   },
+   {
+    "name": "ToRGB",
+    "type": "gm_u16 (*)(",
+    "off": 60
+   },
+   {
+    "name": "DrawLine",
+    "type": "void (*)(",
+    "off": 64
+   },
+   {
+    "name": "DrawLineEx",
+    "type": "void (*)(VmImageType *, gm_s16, gm_s16, gm_s16, gm_s16, gm_u16)",
+    "off": 68
+   },
+   {
+    "name": "DrawRect",
+    "type": "void (*)(VmGraphics *, gm_s16, gm_s16, gm_s16, gm_s16, gm_u16)",
+    "off": 72
+   },
+   {
+    "name": "FillRect",
+    "type": "void (*)(VmGraphics *, gm_s16, gm_s16, gm_u16, gm_u16, gm_u16)",
+    "off": 76
+   },
+   {
+    "name": "GetStreamDataFormRes",
+    "type": "gm_u8 *(*)(tResource)",
+    "off": 80
+   },
+   {
+    "name": "GetClip",
+    "type": "GAME_RECT_T (*)()",
+    "off": 84
+   },
+   {
+    "name": "CheckClip",
+    "type": "void (*)(gm_s16, gm_s16)",
+    "off": 88
+   },
+   {
+    "name": "GetFontWidth",
+    "type": "int (*)()",
+    "off": 92
+   },
+   {
+    "name": "GetFontWidth_char",
+    "type": "int (*)()",
+    "off": 96
+   },
+   {
+    "name": "GetFontHeight",
+    "type": "int (*)()",
+    "off": 100
+   },
+   {
+    "name": "GetFontHeight_char",
+    "type": "int (*)()",
+    "off": 104
+   },
+   {
+    "name": "DrawImageWithClipEx",
+    "type": "void (*)(VmImageType *, VmImageType *, gm_s16, gm_s16, gm_s16, gm_s16, gm_s16, gm_s16)",
+    "off": 108
+   },
+   {
+    "name": "DrawImageClipAndAlphaEx",
+    "type": "void (*)(VmImageType *, VmImageType *, gm_s16, gm_s16, gm_s16, gm_s16, gm_s16, gm_s16)",
+    "off": 112
+   },
+   {
+    "name": "DrawImageNumberEx",
+    "type": "void (*)(VmImageType *, VmImageType *, gm_s32, gm_s16, gm_s16, gm_s16, gm_s16, gm_s16, gm_u8)",
+    "off": 116
+   },
+   {
+    "name": "RefresScreen",
+    "type": "void (*)()",
+    "off": 120
+   },
+   {
+    "name": "NumToZhiFei",
+    "type": "gm_u8 *(*)(gm_u8)",
+    "off": 124
+   },
+   {
+    "name": "GetLCDBuffer",
+    "type": "gm_u16 *(*)()",
+    "off": 128
+   },
+   {
+    "name": "InitTextBox",
+    "type": "void (*)(",
+    "off": 132
+   },
+   {
+    "name": "getTextLine",
+    "type": "gm_s32 (*)(char *, gm_s32)",
+    "off": 136
+   },
+   {
+    "name": "InitSprite",
+    "type": "void (*)(",
+    "off": 140
+   },
+   {
+    "name": "initListener",
+    "type": "void (*)(",
+    "off": 144
+   },
+   {
+    "name": "releaseListener",
+    "type": "void (*)(Listener *)",
+    "off": 148
+   },
+   {
+    "name": "talkRepaintListener",
+    "type": "void (*)(Listener *, gm_s16, gm_s16, gm_s16, gm_s16)",
+    "off": 152
+   },
+   {
+    "name": "initTalker",
+    "type": "void (*)(",
+    "off": 156
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmGameUtilManagerTag",
+  "size": 160,
+  "members": [
+   {
+    "name": "CdRect",
+    "type": "gm_bool (*)(int, int, int, int, int, int, int, int)",
+    "off": 0
+   },
+   {
+    "name": "CdRectPoint",
+    "type": "gm_bool (*)(int, int, int, int, int, int)",
+    "off": 4
+   },
+   {
+    "name": "CdRect2",
+    "type": "gm_bool (*)(int, int, int, int, int, int, int, int)",
+    "off": 8
+   },
+   {
+    "name": "CdRectPoint2",
+    "type": "gm_bool (*)(int, int, int, int, int, int)",
+    "off": 12
+   },
+   {
+    "name": "Abs",
+    "type": "gm_s16 (*)(gm_s16)",
+    "off": 16
+   },
+   {
+    "name": "Max",
+    "type": "gm_s16 (*)(gm_s16, gm_s16)",
+    "off": 20
+   },
+   {
+    "name": "Min",
+    "type": "gm_s16 (*)(gm_s16, gm_s16)",
+    "off": 24
+   },
+   {
+    "name": "Random",
+    "type": "gm_s16 (*)(gm_s16, gm_s16)",
+    "off": 28
+   },
+   {
+    "name": "Sqrt",
+    "type": "gm_s32 (*)(gm_s32)",
+    "off": 32
+   },
+   {
+    "name": "DF_SetDataPackage",
+    "type": "void (*)(DF_DataPackage *)",
+    "off": 36
+   },
+   {
+    "name": "DF_GetDataPackage",
+    "type": "DF_DataPackage *(*)()",
+    "off": 40
+   },
+   {
+    "name": "DF_GetResourceByResourceID",
+    "type": "char *(*)(int)",
+    "off": 44
+   },
+   {
+    "name": "DF_GetResourceByFileName",
+    "type": "char *(*)(char *)",
+    "off": 48
+   },
+   {
+    "name": "DF_GetResourceNameByID",
+    "type": "char *(*)(int)",
+    "off": 52
+   },
+   {
+    "name": "DF_GetResourceIDByFileName",
+    "type": "int (*)(char *)",
+    "off": 56
+   },
+   {
+    "name": "DF_GetTResource",
+    "type": "tResource (*)(char *)",
+    "off": 60
+   },
+   {
+    "name": "DF_GetStreamTResource",
+    "type": "tResource (*)(char *)",
+    "off": 64
+   },
+   {
+    "name": "DF_DataPackage_ShowFileList",
+    "type": "void (*)()",
+    "off": 68
+   },
+   {
+    "name": "DF_String_Equal",
+    "type": "gm_bool (*)(char *, char *)",
+    "off": 72
+   },
+   {
+    "name": "ReadShort",
+    "type": "gm_s16 (*)(char *",
+    "off": 76
+   },
+   {
+    "name": "DF_ReadInt",
+    "type": "gm_s32 (*)(char *, gm_s32 *)",
+    "off": 80
+   },
+   {
+    "name": "DF_File_ReadShort",
+    "type": "gm_s16 (*)(VMFILE)",
+    "off": 84
+   },
+   {
+    "name": "DF_File_ReadInt",
+    "type": "gm_s32 (*)(VMFILE)",
+    "off": 88
+   },
+   {
+    "name": "DF_WriteShort",
+    "type": "void (*)(char *, gm_s32 *",
+    "off": 92
+   },
+   {
+    "name": "DF_WriteInt",
+    "type": "void (*)(char *, gm_s32 *, gm_s32)",
+    "off": 96
+   },
+   {
+    "name": "DF_ReadString",
+    "type": "char *(*)(char *, gm_s32 *)",
+    "off": 100
+   },
+   {
+    "name": "DF_ReadStringEx",
+    "type": "void (*)(",
+    "off": 104
+   },
+   {
+    "name": "DF_File_ReadString",
+    "type": "char *(*)(VMFILE)",
+    "off": 108
+   },
+   {
+    "name": "DF_File_ReadToBuffer",
+    "type": "void (*)(VMFILE, char *, gm_s32)",
+    "off": 112
+   },
+   {
+    "name": "DF_ReadString2",
+    "type": "char *(*)(char *, gm_s32 *)",
+    "off": 116
+   },
+   {
+    "name": "DF_GetMemoryBlock",
+    "type": "MemoryBlock *(*)()",
+    "off": 120
+   },
+   {
+    "name": "DF_Sin",
+    "type": "gm_s32 (*)(gm_s32)",
+    "off": 124
+   },
+   {
+    "name": "DF_Cos",
+    "type": "gm_s32 (*)(gm_s32)",
+    "off": 128
+   },
+   {
+    "name": "DF_Degree",
+    "type": "gm_s32 (*)(gm_s32, gm_s32)",
+    "off": 132
+   },
+   {
+    "name": "DF_CollectionTest",
+    "type": "gm_bool (*)(Rect, Rect)",
+    "off": 136
+   },
+   {
+    "name": "DF_SwapVal",
+    "type": "void (*)(",
+    "off": 140
+   },
+   {
+    "name": "formatString",
+    "type": "char *(*)(const void *, ...)",
+    "off": 144
+   },
+   {
+    "name": "Storage_Date",
+    "type": "gm_bool (*)(char *, gm_u8 *, int, gm_bool, gm_bool)",
+    "off": 148
+   },
+   {
+    "name": "Game_stricmp",
+    "type": "gm_u32 (*)(char *, char *)",
+    "off": 152
+   },
+   {
+    "name": "Game_strnicmp",
+    "type": "gm_u32 (*)(char *, char *, int)",
+    "off": 156
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmDFEnginelManagerTag",
+  "size": 60,
+  "members": [
+   {
+    "name": "initDFMap",
+    "type": "void (*)(",
+    "off": 0
+   },
+   {
+    "name": "initDFMapRenderBuffer",
+    "type": "void (*)(",
+    "off": 4
+   },
+   {
+    "name": "initDFMapVScollBuffer",
+    "type": "void (*)(",
+    "off": 8
+   },
+   {
+    "name": "initDFPictureLibrary",
+    "type": "void (*)(DF_PictureLibrary *, int)",
+    "off": 12
+   },
+   {
+    "name": "initDFRecord",
+    "type": "void (*)(",
+    "off": 16
+   },
+   {
+    "name": "initDFScene",
+    "type": "void (*)(",
+    "off": 20
+   },
+   {
+    "name": "initDFSpriteLibrary",
+    "type": "void (*)(",
+    "off": 24
+   },
+   {
+    "name": "initDFWindows",
+    "type": "void (*)(",
+    "off": 28
+   },
+   {
+    "name": "initDreamFactoryEngine",
+    "type": "void (*)()",
+    "off": 32
+   },
+   {
+    "name": "initDFActor",
+    "type": "void (*)(",
+    "off": 36
+   },
+   {
+    "name": "initDFDataPackage",
+    "type": "void (*)(DF_DataPackage *, gm_s16)",
+    "off": 40
+   },
+   {
+    "name": "GetSceneMapVScollBufferPtr",
+    "type": "DF_MapVScollBuffer *(*)()",
+    "off": 44
+   },
+   {
+    "name": "GetDF_MapRenderBufferPtr",
+    "type": "DF_MapRenderBuffer *(*)()",
+    "off": 48
+   },
+   {
+    "name": "DF_MapRenderBuffer_Windows_Render",
+    "type": "void (*)(void *)",
+    "off": 52
+   },
+   {
+    "name": "DF_SendMessage",
+    "type": "void (*)(DF_Windows *, short, void *)",
+    "off": 56
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmNetAppManagerTag",
+  "size": 244,
+  "members": [
+   {
+    "name": "coolbar_NetEntry",
+    "type": "void (*)(",
+    "off": 0
+   },
+   {
+    "name": "coolbar_GHEntry",
+    "type": "void (*)(",
+    "off": 4
+   },
+   {
+    "name": "net_SetCommonHandle",
+    "type": "void (*)(NetCommonHandleF)",
+    "off": 8
+   },
+   {
+    "name": "net_set_appPackage_dataSegment",
+    "type": "void (*)(const char *, const char *, VMUINT8 *, VMUINT16 *)",
+    "off": 12
+   },
+   {
+    "name": "net_set_appPackage_dataSegmentExt",
+    "type": "void (*)(const char *, VMUINT32, VMUINT8 *, VMUINT16 *)",
+    "off": 16
+   },
+   {
+    "name": "net_set_appPackage_dataSegment_combi",
+    "type": "void (*)(const char *, const char *, VMUINT8 *, VMUINT16, VMUINT16 *)",
+    "off": 20
+   },
+   {
+    "name": "net_Game_Send_AppPackage",
+    "type": "VMBOOLEAN (*)(VMUINT8 *, VMUINT16, VMUINT8, VMUINT8)",
+    "off": 24
+   },
+   {
+    "name": "net_Game_Send_gamePackage",
+    "type": "VMBOOLEAN (*)(VMUINT8 *, VMUINT16)",
+    "off": 28
+   },
+   {
+    "name": "net_Game_get_userId",
+    "type": "VMUINT32 (*)()",
+    "off": 32
+   },
+   {
+    "name": "net_Game_set_userId",
+    "type": "void (*)(VMUINT32)",
+    "off": 36
+   },
+   {
+    "name": "net_Game_set_sessionId",
+    "type": "void (*)(VMUINT8 *, VMUINT8)",
+    "off": 40
+   },
+   {
+    "name": "net_Game_get_gameId",
+    "type": "VMUINT32 (*)()",
+    "off": 44
+   },
+   {
+    "name": "net_Game_set_gameId",
+    "type": "void (*)(VMUINT32)",
+    "off": 48
+   },
+   {
+    "name": "net_Game_get_gameType",
+    "type": "VMUINT8 (*)()",
+    "off": 52
+   },
+   {
+    "name": "net_Game_set_gameType",
+    "type": "void (*)(VMUINT8)",
+    "off": 56
+   },
+   {
+    "name": "net_Game_get_gamePackageType",
+    "type": "VMUINT8 (*)()",
+    "off": 60
+   },
+   {
+    "name": "net_Game_set_gamePackageType",
+    "type": "void (*)(VMUINT8)",
+    "off": 64
+   },
+   {
+    "name": "net_Game_get_gameStep",
+    "type": "VMUINT8 (*)()",
+    "off": 68
+   },
+   {
+    "name": "net_Game_set_gameStep",
+    "type": "void (*)(VMUINT8)",
+    "off": 72
+   },
+   {
+    "name": "net_get_connectId",
+    "type": "VMINT32 (*)()",
+    "off": 76
+   },
+   {
+    "name": "net_set_connectId",
+    "type": "void (*)(VMINT32)",
+    "off": 80
+   },
+   {
+    "name": "net_Game_Init",
+    "type": "void (*)(VMUINT8, VMUINT8)",
+    "off": 84
+   },
+   {
+    "name": "net_Game_Exit",
+    "type": "void (*)(VMUINT8)",
+    "off": 88
+   },
+   {
+    "name": "net_Game_ready",
+    "type": "void (*)(VMUINT8)",
+    "off": 92
+   },
+   {
+    "name": "net_Game_sitDown",
+    "type": "void (*)(VMUINT8, VMUINT8, VMUINT16)",
+    "off": 96
+   },
+   {
+    "name": "net_Game_send_select_score",
+    "type": "void (*)(VMUINT8, VMUINT8)",
+    "off": 100
+   },
+   {
+    "name": "net_Game_pass",
+    "type": "void (*)(VMUINT8)",
+    "off": 104
+   },
+   {
+    "name": "net_Game_combine_card",
+    "type": "void (*)(VMUINT8 *, VMUINT8, VMUINT8)",
+    "off": 108
+   },
+   {
+    "name": "net_Game_parse_card_value",
+    "type": "void (*)(VMUINT8",
+    "off": 112
+   },
+   {
+    "name": "net_Game_combine_card_value",
+    "type": "void (*)(CCard, VMUINT8 *)",
+    "off": 116
+   },
+   {
+    "name": "net_Game_get_cards",
+    "type": "void (*)(GAME_CARDS, VMUINT8 *, VMUINT8 *, VMUINT8 *, VMUINT8)",
+    "off": 120
+   },
+   {
+    "name": "net_close_channel",
+    "type": "void (*)(VMINT32)",
+    "off": 124
+   },
+   {
+    "name": "net_Game_set_curRmIndex",
+    "type": "void (*)(VMUINT16)",
+    "off": 128
+   },
+   {
+    "name": "net_Game_get_curRmIndex",
+    "type": "VMUINT16 (*)()",
+    "off": 132
+   },
+   {
+    "name": "net_Game_set_curSerIndex",
+    "type": "void (*)(VMUINT16)",
+    "off": 136
+   },
+   {
+    "name": "net_Game_get_curSerIndex",
+    "type": "VMUINT16 (*)()",
+    "off": 140
+   },
+   {
+    "name": "net_game_request_personalBasicInfo",
+    "type": "void (*)(VMUINT32)",
+    "off": 144
+   },
+   {
+    "name": "net_game_request_personalGameInfo",
+    "type": "void (*)(VMUINT32, VMUINT8)",
+    "off": 148
+   },
+   {
+    "name": "net_game_request_personalBGInfo",
+    "type": "void (*)(VMUINT32, VMUINT8)",
+    "off": 152
+   },
+   {
+    "name": "net_get_DefaultLoginInfo",
+    "type": "void (*)(LOGIN_INFO_T *)",
+    "off": 156
+   },
+   {
+    "name": "net_write_DefaultLoginInfo",
+    "type": "void (*)(LOGIN_INFO_T *)",
+    "off": 160
+   },
+   {
+    "name": "net_Recv_Data",
+    "type": "void (*)(VMUINT8 *, VMUINT32, VMUINT32, NetRequestResultType)",
+    "off": 164
+   },
+   {
+    "name": "net_build_sessionId",
+    "type": "void (*)(VMINT32)",
+    "off": 168
+   },
+   {
+    "name": "net_Login",
+    "type": "void (*)(",
+    "off": 172
+   },
+   {
+    "name": "net_commonRegister",
+    "type": "VMBOOLEAN (*)(VMCHAR *, VMINT32, VMCHAR *, VMCHAR *)",
+    "off": 176
+   },
+   {
+    "name": "net_OneKeyRegister",
+    "type": "VMBOOLEAN (*)(VMCHAR *, VMINT32)",
+    "off": 180
+   },
+   {
+    "name": "net_set_UserInfo",
+    "type": "void (*)(",
+    "off": 184
+   },
+   {
+    "name": "net_get_UserInfo",
+    "type": "USER_BASIC_INFO *(*)()",
+    "off": 188
+   },
+   {
+    "name": "net_parse_Int8_by_name",
+    "type": "VMBOOLEAN (*)(VMUINT8 *, VMUINT16, const char *, VMUINT8 *)",
+    "off": 192
+   },
+   {
+    "name": "net_parse_Int16_by_name",
+    "type": "VMBOOLEAN (*)(VMUINT8 *, VMUINT16, const char *, VMUINT16 *)",
+    "off": 196
+   },
+   {
+    "name": "net_parse_Int32_by_name",
+    "type": "VMBOOLEAN (*)(VMUINT8 *, VMUINT16, const char *, VMUINT32 *)",
+    "off": 200
+   },
+   {
+    "name": "net_parse_Str_by_name",
+    "type": "VMUINT8 (*)(VMUINT8 *, VMUINT16, const char *, VMUINT8 *, VMUINT16 *)",
+    "off": 204
+   },
+   {
+    "name": "net_set_serverVer",
+    "type": "void (*)(VMUINT16)",
+    "off": 208
+   },
+   {
+    "name": "net_get_serverVer",
+    "type": "VMUINT16 (*)()",
+    "off": 212
+   },
+   {
+    "name": "net_parse_signedInt32_by_name",
+    "type": "VMBOOLEAN (*)(VMUINT8 *, VMUINT16, const char *, VMINT32 *)",
+    "off": 216
+   },
+   {
+    "name": "net_get_valueData_offset_by_name",
+    "type": "VMUINT8 (*)(VMUINT8 *, VMUINT16, const char *, VMUINT32 *, VMUINT16 *)",
+    "off": 220
+   },
+   {
+    "name": "net_set_redirectURL",
+    "type": "void (*)(char *, VMUINT16)",
+    "off": 224
+   },
+   {
+    "name": "net_get_redirectURL",
+    "type": "char *(*)()",
+    "off": 228
+   },
+   {
+    "name": "net_Game_Send_AppPackage_NewConnect",
+    "type": "VMBOOLEAN (*)(VMUINT32, VMUINT8 *, VMUINT16, VMUINT8, VMUINT8)",
+    "off": 232
+   },
+   {
+    "name": "net_Recv_Data_NewConnect",
+    "type": "void (*)(VMUINT8 *, VMUINT32, VMUINT32, NetRequestResultType, VMUINT32)",
+    "off": 236
+   },
+   {
+    "name": "net_GetAppInfo",
+    "type": "void (*)(VMUINT16 *, VMUINT16 *, VMUINT8 *)",
+    "off": 240
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmAudioManagerTag",
+  "size": 124,
+  "members": [
+   {
+    "name": "vMAudioSetVolume",
+    "type": "void (*)(VMUINT8, VMBOOLEAN)",
+    "off": 0
+   },
+   {
+    "name": "vMAudioPlayByData",
+    "type": "VMINT16 (*)(VMUINT8 *, VMUINT8)",
+    "off": 4
+   },
+   {
+    "name": "vMAudioPlayWithDataPackage",
+    "type": "VMINT16 (*)(gm_u32, VMUINT8, DF_DataPackage *)",
+    "off": 8
+   },
+   {
+    "name": "vMAudioPlayForGame",
+    "type": "VMINT16 (*)(gm_u32, VMUINT8)",
+    "off": 12
+   },
+   {
+    "name": "vMAudioPlayForApp",
+    "type": "VMINT16 (*)(gm_u32, VMUINT8)",
+    "off": 16
+   },
+   {
+    "name": "vMAudioPause",
+    "type": "VMBOOLEAN (*)()",
+    "off": 20
+   },
+   {
+    "name": "vMAudioResume",
+    "type": "VMBOOLEAN (*)()",
+    "off": 24
+   },
+   {
+    "name": "vMAudioStop",
+    "type": "VMBOOLEAN (*)()",
+    "off": 28
+   },
+   {
+    "name": "vMAduioGetState",
+    "type": "VMUINT8 (*)()",
+    "off": 32
+   },
+   {
+    "name": "VmMp3PlayByStream",
+    "type": "VMBOOLEAN (*)(vm_mp3PlayCallback)",
+    "off": 36
+   },
+   {
+    "name": "VmMp3PauseByStream",
+    "type": "void (*)()",
+    "off": 40
+   },
+   {
+    "name": "VmMp3ResumeByStream",
+    "type": "void (*)()",
+    "off": 44
+   },
+   {
+    "name": "VmMp3StopBystream",
+    "type": "void (*)()",
+    "off": 48
+   },
+   {
+    "name": "VmMp3PlayByFile",
+    "type": "void (*)(VMUINT16 *, vm_mp3PlayCallback)",
+    "off": 52
+   },
+   {
+    "name": "VmMp3PauseByFile",
+    "type": "void (*)()",
+    "off": 56
+   },
+   {
+    "name": "VmMp3ResumeByFile",
+    "type": "void (*)()",
+    "off": 60
+   },
+   {
+    "name": "VmMp3StopByFile",
+    "type": "void (*)()",
+    "off": 64
+   },
+   {
+    "name": "VmMp3GetProgressTime",
+    "type": "void (*)(VMUINT32 *, VMUINT32 *)",
+    "off": 68
+   },
+   {
+    "name": "VmMp3StreamInit",
+    "type": "void (*)(vm_mp3GetByteFromBuffer_CallBack, vm_mp3PeekBuffer_CallBack, vm_mp3setBufferPos_CallBack)",
+    "off": 72
+   },
+   {
+    "name": "VmAMRStartPlayInit",
+    "type": "void (*)(",
+    "off": 76
+   },
+   {
+    "name": "VmAMRStopPlay",
+    "type": "void (*)()",
+    "off": 80
+   },
+   {
+    "name": "VmAMRplay",
+    "type": "void (*)(VMUINT16 *, VMUINT16)",
+    "off": 84
+   },
+   {
+    "name": "VmAMRStartRecord",
+    "type": "VMBOOLEAN (*)(void *)",
+    "off": 88
+   },
+   {
+    "name": "VmAMRStopRecord",
+    "type": "void (*)()",
+    "off": 92
+   },
+   {
+    "name": "VmSetAMRRecBS",
+    "type": "void (*)(VMUINT32)",
+    "off": 96
+   },
+   {
+    "name": "VmMp3PlayByFileEx",
+    "type": "void (*)(VmFileDevType, VMUINT16 *, vm_mp3PlayCallback)",
+    "off": 100
+   },
+   {
+    "name": "vMStartAudioRecordEx",
+    "type": "VMBOOLEAN (*)(CB_AMR_DECODER *, CBAudioFormat)",
+    "off": 104
+   },
+   {
+    "name": "vMStopAudioRecordEx",
+    "type": "void (*)()",
+    "off": 108
+   },
+   {
+    "name": "CB_AUD_StartPlay_InitEx",
+    "type": "void (*)(CB_AMR_DECODER *, CBAudioFormat)",
+    "off": 112
+   },
+   {
+    "name": "CB_AUD_StartPlayEx",
+    "type": "void (*)(VMUINT16 *, VMUINT16, CBAudioFormat)",
+    "off": 116
+   },
+   {
+    "name": "CB_AUD_StopPlayEx",
+    "type": "void (*)()",
+    "off": 120
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmVideoManagerTag",
+  "size": 152,
+  "members": [
+   {
+    "name": "VmISPServiceOpen",
+    "type": "void (*)()",
+    "off": 0
+   },
+   {
+    "name": "VmISPServiceClose",
+    "type": "void (*)()",
+    "off": 4
+   },
+   {
+    "name": "VmDCVideoSetDisplayParam",
+    "type": "VMUINT32 (*)(",
+    "off": 8
+   },
+   {
+    "name": "VmDCDisplayAFrame",
+    "type": "VMUINT32 (*)(",
+    "off": 12
+   },
+   {
+    "name": "VmVideoIRAMMemInit",
+    "type": "void (*)(VMUINT32, void *)",
+    "off": 16
+   },
+   {
+    "name": "VmVideoIRAMMemMalloc",
+    "type": "void *(*)(VMUINT32, VMUINT32)",
+    "off": 20
+   },
+   {
+    "name": "VmVideoIRAMMemFree",
+    "type": "void (*)(VMUINT32, VMUINT32)",
+    "off": 24
+   },
+   {
+    "name": "VmVideoIRAMMemClose",
+    "type": "void (*)(VMUINT32, void *)",
+    "off": 28
+   },
+   {
+    "name": "VmCamOpenInit",
+    "type": "VMBOOLEAN (*)(void *)",
+    "off": 32
+   },
+   {
+    "name": "VmCloseCamera",
+    "type": "VMBOOLEAN (*)()",
+    "off": 36
+   },
+   {
+    "name": "VmStartCaptureYUV",
+    "type": "VMBOOLEAN (*)(void *)",
+    "off": 40
+   },
+   {
+    "name": "VmStopCaptureYUV",
+    "type": "VMBOOLEAN (*)()",
+    "off": 44
+   },
+   {
+    "name": "VmIsDoubleCamera",
+    "type": "VMBOOLEAN (*)()",
+    "off": 48
+   },
+   {
+    "name": "VmSetCameraLoc",
+    "type": "void (*)(VMBOOLEAN)",
+    "off": 52
+   },
+   {
+    "name": "VmVideoDecInit",
+    "type": "void *(*)(unsigned int)",
+    "off": 56
+   },
+   {
+    "name": "VmVideoDecFrame",
+    "type": "VMUINT32 (*)(void *, const void *, VMUINT32, VMUINT32 *)",
+    "off": 60
+   },
+   {
+    "name": "VmVideoDecOutput",
+    "type": "const void *(*)(void *, void *, VMBOOLEAN)",
+    "off": 64
+   },
+   {
+    "name": "VmVideoDecOutputEx",
+    "type": "const void *(*)(void *, void *, void *, VMBOOLEAN)",
+    "off": 68
+   },
+   {
+    "name": "VmGetVideoDecParm",
+    "type": "void (*)(void *, VMUINT32 *, VMUINT32 *, VMUINT32 *)",
+    "off": 72
+   },
+   {
+    "name": "VmGetVideoDecParmEx",
+    "type": "void (*)(void *, VMUINT32 *, VMUINT32 *, VMUINT32 *)",
+    "off": 76
+   },
+   {
+    "name": "VmVideoDecClose",
+    "type": "void (*)(void *)",
+    "off": 80
+   },
+   {
+    "name": "VmVideoEncInit",
+    "type": "void *(*)(",
+    "off": 84
+   },
+   {
+    "name": "VmVideoEncFrame",
+    "type": "VMUINT32 (*)(void *, VMUINT8 *, VMUINT8 *, VMUINT32 *, VMUINT32 *)",
+    "off": 88
+   },
+   {
+    "name": "VmVideoEncClose",
+    "type": "void (*)(void *)",
+    "off": 92
+   },
+   {
+    "name": "VmGetVideoEncParm",
+    "type": "void (*)(VMUINT32, VMUINT32 *, VMUINT32 *)",
+    "off": 96
+   },
+   {
+    "name": "VmVideoPicScaling",
+    "type": "void (*)(VMUINT8 *, VMUINT8 *, VMUINT32, VMUINT32, VMUINT32, VMUINT32, VMUINT32)",
+    "off": 100
+   },
+   {
+    "name": "VmVideoPicUpturn",
+    "type": "void (*)(VMUINT8 *, VMUINT8 *, VMUINT32 *, VMUINT32 *)",
+    "off": 104
+   },
+   {
+    "name": "VmSetCamSampTime",
+    "type": "void (*)(VMUINT32)",
+    "off": 108
+   },
+   {
+    "name": "VmIsVideoPlayerRun",
+    "type": "VMBOOLEAN (*)()",
+    "off": 112
+   },
+   {
+    "name": "VmPlayVideo",
+    "type": "VMBOOLEAN (*)(VMWCHAR *, void *)",
+    "off": 116
+   },
+   {
+    "name": "VmRegPlayVideoCb",
+    "type": "void (*)(playVideoCallBack)",
+    "off": 120
+   },
+   {
+    "name": "VmGetMediaFileInfo",
+    "type": "VMBOOLEAN (*)(VMWCHAR *",
+    "off": 124
+   },
+   {
+    "name": "VmPlayStreamingVideo",
+    "type": "VMBOOLEAN (*)(VMUINT16 *, VMUINT16, codec_SeekMode_e, codec_videoStreamingMode_e, codec_mediaFormat_t)",
+    "off": 128
+   },
+   {
+    "name": "VmStopStreamingVideo",
+    "type": "VMBOOLEAN (*)()",
+    "off": 132
+   },
+   {
+    "name": "VmSetDownloadInterface",
+    "type": "void (*)(",
+    "off": 136
+   },
+   {
+    "name": "VmGetStreamingVideoHandle",
+    "type": "VMUINT32 (*)()",
+    "off": 140
+   },
+   {
+    "name": "VmGetStreamingInfo",
+    "type": "VMBOOLEAN (*)(",
+    "off": 144
+   },
+   {
+    "name": "VmStreamingFileChange",
+    "type": "VMBOOLEAN (*)(",
+    "off": 148
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmGSensorManagerrTag",
+  "size": 48,
+  "members": [
+   {
+    "name": "vmGsensorInit",
+    "type": "void (*)()",
+    "off": 0
+   },
+   {
+    "name": "vmGsensorStop",
+    "type": "void (*)()",
+    "off": 4
+   },
+   {
+    "name": "vmGsensorStartTile",
+    "type": "void (*)(VmGSensorBack)",
+    "off": 8
+   },
+   {
+    "name": "vmGsensorStartShake",
+    "type": "void (*)(VmGSensorBack)",
+    "off": 12
+   },
+   {
+    "name": "vmGsensorStartTurn",
+    "type": "void (*)(VmGSensorBack)",
+    "off": 16
+   },
+   {
+    "name": "vmGsensorStartSwing",
+    "type": "void (*)(VmGSensorBack)",
+    "off": 20
+   },
+   {
+    "name": "vmGsensorPowerOff",
+    "type": "void (*)()",
+    "off": 24
+   },
+   {
+    "name": "vmGSenserIsSupportInCb",
+    "type": "VMBOOLEAN (*)()",
+    "off": 28
+   },
+   {
+    "name": "vmGsensorGetDevInfo",
+    "type": "VMBOOLEAN (*)(",
+    "off": 32
+   },
+   {
+    "name": "vmGsensorRegistMotionChange",
+    "type": "VMBOOLEAN (*)(VMUINT32, VMBOOLEAN, GsensorMotionListenrCb, VMBOOLEAN, void *)",
+    "off": 36
+   },
+   {
+    "name": "vmGsensorRegistNotifyChange",
+    "type": "VMBOOLEAN (*)(GSENSOR_NOTIFY_PROFILE, VMBOOLEAN, GsensorNotifyCb, VMBOOLEAN, void *)",
+    "off": 40
+   },
+   {
+    "name": "vmGsensorGetLastMotionInfo",
+    "type": "VMBOOLEAN (*)(VMUINT32, VMUINT32 *)",
+    "off": 44
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmStdManagerTag",
+  "size": 88,
+  "members": [
+   {
+    "name": "memcpy",
+    "type": "void *(*)(void *, const void *, unsigned int)",
+    "off": 0
+   },
+   {
+    "name": "strlen",
+    "type": "unsigned int (*)(const char *)",
+    "off": 4
+   },
+   {
+    "name": "memset",
+    "type": "void *(*)(void *, int, unsigned int)",
+    "off": 8
+   },
+   {
+    "name": "sprintf",
+    "type": "int (*)(char *, const char *, ...)",
+    "off": 12
+   },
+   {
+    "name": "printf",
+    "type": "void (*)(char *, ...)",
+    "off": 16
+   },
+   {
+    "name": "rand",
+    "type": "int (*)()",
+    "off": 20
+   },
+   {
+    "name": "vsprintf",
+    "type": "int (*)(char *, const char *",
+    "off": 24
+   },
+   {
+    "name": "strncpy",
+    "type": "char *(*)(char *, const char *, unsigned int)",
+    "off": 28
+   },
+   {
+    "name": "strcpy",
+    "type": "char *(*)(char *, const char *)",
+    "off": 32
+   },
+   {
+    "name": "strcat",
+    "type": "char *(*)(char *, const char *)",
+    "off": 36
+   },
+   {
+    "name": "atol",
+    "type": "long (*)(const char *)",
+    "off": 40
+   },
+   {
+    "name": "memmove",
+    "type": "void *(*)(void *, const void *, unsigned int)",
+    "off": 44
+   },
+   {
+    "name": "atoi",
+    "type": "int (*)(const char *)",
+    "off": 48
+   },
+   {
+    "name": "pow",
+    "type": "float (*)(float, float)",
+    "off": 52
+   },
+   {
+    "name": "strcmp",
+    "type": "int (*)(const char *, const char *)",
+    "off": 56
+   },
+   {
+    "name": "memcmp",
+    "type": "int (*)(const void *, const void *, size_t)",
+    "off": 60
+   },
+   {
+    "name": "strncmp",
+    "type": "int (*)(const char *, const char *, size_t)",
+    "off": 64
+   },
+   {
+    "name": "setjmp",
+    "type": "int (*)(int *)",
+    "off": 68
+   },
+   {
+    "name": "longjmp",
+    "type": "void (*)(int *, int)",
+    "off": 72
+   },
+   {
+    "name": "atof",
+    "type": "double (*)(const char *)",
+    "off": 76
+   },
+   {
+    "name": "vMstricmp",
+    "type": "VMUINT32 (*)(char *, char *)",
+    "off": 80
+   },
+   {
+    "name": "vMstrnicmp",
+    "type": "VMUINT32 (*)(char *, char *, int)",
+    "off": 84
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmImManagerTag",
+  "size": 32,
+  "members": [
+   {
+    "name": "reserver_func01",
+    "type": "void (*)(void *)",
+    "off": 0
+   },
+   {
+    "name": "reserver_func02",
+    "type": "void (*)(void *)",
+    "off": 4
+   },
+   {
+    "name": "reserver_func03",
+    "type": "void (*)(void *)",
+    "off": 8
+   },
+   {
+    "name": "reserver_func04",
+    "type": "void (*)(void *)",
+    "off": 12
+   },
+   {
+    "name": "reserver_func05",
+    "type": "void (*)(void *)",
+    "off": 16
+   },
+   {
+    "name": "reserver_func06",
+    "type": "void (*)(void *)",
+    "off": 20
+   },
+   {
+    "name": "reserver_func07",
+    "type": "void (*)(void *)",
+    "off": 24
+   },
+   {
+    "name": "reserver_func08",
+    "type": "void (*)(void *)",
+    "off": 28
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmDlLoadManagerTag",
+  "size": 44,
+  "members": [
+   {
+    "name": "vlDlSetCurrContextAddress",
+    "type": "void (*)(VMUINT32 **, VMBOOLEAN)",
+    "off": 0
+   },
+   {
+    "name": "vlDlSetContextAddress",
+    "type": "void (*)(VMUINT16, VMUINT32 **, VMBOOLEAN)",
+    "off": 4
+   },
+   {
+    "name": "vlDlUnLoadCurrApp",
+    "type": "void (*)(VMBOOLEAN)",
+    "off": 8
+   },
+   {
+    "name": "vlDlUnLoadApp",
+    "type": "void (*)(VMUINT16, VMBOOLEAN)",
+    "off": 12
+   },
+   {
+    "name": "vmDlParseAndCopy",
+    "type": "VMINT8 (*)(const VMUINT16 *, VMUINT16 *, VMUINT8 *, VMUINT32 *)",
+    "off": 16
+   },
+   {
+    "name": "vlDlLoadApp",
+    "type": "VMBOOLEAN (*)(VMUINT16)",
+    "off": 20
+   },
+   {
+    "name": "vlDlLoadAppEx",
+    "type": "VMBOOLEAN (*)(VMUINT16, VMUINT8)",
+    "off": 24
+   },
+   {
+    "name": "vlDlAppIsInDl",
+    "type": "VMBOOLEAN (*)(VMUINT16)",
+    "off": 28
+   },
+   {
+    "name": "vmGetcurrInnerAppId",
+    "type": "VMUINT16 (*)()",
+    "off": 32
+   },
+   {
+    "name": "CBInnerInit_qqIn",
+    "type": "void (*)(VMUINT8 *, VMUINT32, VMUINT32, VMUINT8 *, VMUINT8 *, VMUINT32, VMUINT32, VMUINT8 *)",
+    "off": 36
+   },
+   {
+    "name": "VmGetCBEInfoByFileName",
+    "type": "VMBOOLEAN (*)(VMUINT16 *, VMUINT32 *, VMUINT32 *, VMUINT16 *, VMUINT16 *)",
+    "off": 40
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmDlResourceManagerTag",
+  "size": 80,
+  "members": [
+   {
+    "name": "vmGetDataPackage",
+    "type": "DF_DataPackage *(*)(VMBOOLEAN)",
+    "off": 0
+   },
+   {
+    "name": "vmResGetTxtWithDataPackage",
+    "type": "VMCHAR *(*)(VMUINT32, DF_DataPackage *)",
+    "off": 4
+   },
+   {
+    "name": "vmResGetDefTxt",
+    "type": "VMCHAR *(*)(VMUINT32)",
+    "off": 8
+   },
+   {
+    "name": "vmResGetTxtForGame",
+    "type": "VMCHAR *(*)(VMUINT32)",
+    "off": 12
+   },
+   {
+    "name": "IMG_InitDataPage",
+    "type": "void (*)(tResource, gm_s16)",
+    "off": 16
+   },
+   {
+    "name": "IMG_InitInnerDataPageEx",
+    "type": "void (*)(tResource)",
+    "off": 20
+   },
+   {
+    "name": "IMG_InitDataPageEx",
+    "type": "void (*)(tResource, gm_s16, DF_DataPackage *)",
+    "off": 24
+   },
+   {
+    "name": "IMG_InitDataPageTxt",
+    "type": "void (*)(gm_u32)",
+    "off": 28
+   },
+   {
+    "name": "IMG_ReleaseDataPage",
+    "type": "void (*)()",
+    "off": 32
+   },
+   {
+    "name": "IMG_CreateImageFormIdEx",
+    "type": "VmImageType *(*)(gm_u32, DF_DataPackage *, VmImageType *)",
+    "off": 36
+   },
+   {
+    "name": "IMG_CreateImageFormStream",
+    "type": "VmImageType *(*)(gm_u8 *, VmImageType *)",
+    "off": 40
+   },
+   {
+    "name": "IMG_CreateImageFormName",
+    "type": "VmImageType *(*)(char *, DF_DataPackage *, VmImageType *)",
+    "off": 44
+   },
+   {
+    "name": "vMDestoryImage",
+    "type": "VMBOOLEAN (*)(VmImageType *)",
+    "off": 48
+   },
+   {
+    "name": "vMCreateImage",
+    "type": "VMBOOLEAN (*)(VMUINT16, VmImageType *)",
+    "off": 52
+   },
+   {
+    "name": "vMSetCurrDataPackage",
+    "type": "void (*)(DF_DataPackage *)",
+    "off": 56
+   },
+   {
+    "name": "vMGetCurrDataPackage",
+    "type": "DF_DataPackage *(*)()",
+    "off": 60
+   },
+   {
+    "name": "vmFreeDataBuffer",
+    "type": "void (*)()",
+    "off": 64
+   },
+   {
+    "name": "DF_DataPackage_GetFileOffset",
+    "type": "gm_u32 (*)()",
+    "off": 68
+   },
+   {
+    "name": "DF_DataPackage_GetFullPaths",
+    "type": "gm_u16 *(*)()",
+    "off": 72
+   },
+   {
+    "name": "DF_DataPackage_GetFileLens",
+    "type": "gm_u32 (*)()",
+    "off": 76
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmDlImageManagerTag",
+  "size": 56,
+  "members": [
+   {
+    "name": "vMDrawStandardImage",
+    "type": "void (*)(VMUINT32, VMINT32, VMINT32, VMINT32, VMINT32, VMUINT8 *, VMUINT32, VMUINT8)",
+    "off": 0
+   },
+   {
+    "name": "vMGetStandardImageDimension",
+    "type": "void (*)(VMUINT8 *, VMUINT32, VMUINT8, VMINT32 *, VMINT32 *)",
+    "off": 4
+   },
+   {
+    "name": "vMGetStandardImageType",
+    "type": "void (*)(VMUINT8 *, VMUINT8 *)",
+    "off": 8
+   },
+   {
+    "name": "vMDrawStandardImageEx",
+    "type": "void (*)(VmImageType *, VMUINT32, VMINT32, VMINT32, VMINT32, VMINT32, VMUINT8 *, VMUINT32, VMUINT8)",
+    "off": 12
+   },
+   {
+    "name": "vMImageDecoderAllocMemory",
+    "type": "void (*)(VMUINT32, void **)",
+    "off": 16
+   },
+   {
+    "name": "vMImageDecoderFreeMemory",
+    "type": "void (*)(void **)",
+    "off": 20
+   },
+   {
+    "name": "vMImageDecoderGetImageData",
+    "type": "VMUINT8 *(*)(GddiImage *)",
+    "off": 24
+   },
+   {
+    "name": "vMImageDecoderRegImageCodecHandler",
+    "type": "void (*)(GddiImageFormat",
+    "off": 28
+   },
+   {
+    "name": "decodePngStartExt",
+    "type": "VmImageType *(*)(gm_u8 *, VmImageType *, gm_bool)",
+    "off": 32
+   },
+   {
+    "name": "pngcrc32",
+    "type": "unsigned int (*)(unsigned int",
+    "off": 36
+   },
+   {
+    "name": "pnginflate",
+    "type": "int (*)(void *, int)",
+    "off": 40
+   },
+   {
+    "name": "pnginflateInit",
+    "type": "int (*)(void *)",
+    "off": 44
+   },
+   {
+    "name": "pnginflateEnd",
+    "type": "int (*)(void *)",
+    "off": 48
+   },
+   {
+    "name": "pnginflateReset",
+    "type": "int (*)(void *)",
+    "off": 52
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmDLWPayManagerTag",
+  "size": 36,
+  "members": [
+   {
+    "name": "vmWPayEnterCharge",
+    "type": "void (*)(VMBOOLEAN, WPayEnterCallBack, VMUINT16, VMUINT32)",
+    "off": 0
+   },
+   {
+    "name": "vmWPayEnterBuy",
+    "type": "void (*)(VMBOOLEAN, VMUINT32, WPayEnterCallBack, VMUINT16",
+    "off": 4
+   },
+   {
+    "name": "vmWPayGetCbMoney",
+    "type": "void (*)(VMBOOLEAN, WPayEnterCallBack)",
+    "off": 8
+   },
+   {
+    "name": "vmWPaySetPayName",
+    "type": "void (*)(VMCHAR *)",
+    "off": 12
+   },
+   {
+    "name": "vmWPaySetPayPassword",
+    "type": "void (*)(VMCHAR *)",
+    "off": 16
+   },
+   {
+    "name": "vmWPaySetPayPhone",
+    "type": "void (*)(VMCHAR *)",
+    "off": 20
+   },
+   {
+    "name": "vmWPaySetPayPhonePassword",
+    "type": "void (*)(VMCHAR *)",
+    "off": 24
+   },
+   {
+    "name": "vmGetIMEI",
+    "type": "void (*)(VMSTR, VMUINT32)",
+    "off": 28
+   },
+   {
+    "name": "vmWPayEnterPay",
+    "type": "void (*)(VMBOOLEAN, void *)",
+    "off": 32
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmDlAppStoreManagerTag",
+  "size": 156,
+  "members": [
+   {
+    "name": "vmAppStoreInstall",
+    "type": "VMBOOLEAN (*)(",
+    "off": 0
+   },
+   {
+    "name": "vmAppStoreInstallEx",
+    "type": "VMBOOLEAN (*)(AppDataType *, AppStoreCallback)",
+    "off": 4
+   },
+   {
+    "name": "vmAppStoreUninstall",
+    "type": "VMBOOLEAN (*)(VMUINT32, AppType_e)",
+    "off": 8
+   },
+   {
+    "name": "vmAppStoreUninstallEx",
+    "type": "VMBOOLEAN (*)(VMUINT32 *, AppType_e, VMUINT16)",
+    "off": 12
+   },
+   {
+    "name": "vmAppStoreGetAppInfo",
+    "type": "VMBOOLEAN (*)(",
+    "off": 16
+   },
+   {
+    "name": "vmAppStoreGetInstalledAppInfos",
+    "type": "void (*)(",
+    "off": 20
+   },
+   {
+    "name": "vmAppStoreReleaseAppInfos",
+    "type": "void (*)(AppInfoType **)",
+    "off": 24
+   },
+   {
+    "name": "vmAppStorePushMsg",
+    "type": "void (*)(VMUINT32, VMCHAR *)",
+    "off": 28
+   },
+   {
+    "name": "vmAppStoreRunJavaAp",
+    "type": "VMBOOLEAN (*)(VMUINT32)",
+    "off": 32
+   },
+   {
+    "name": "vmAppStoreRunJavaApEx",
+    "type": "VMBOOLEAN (*)(VMUINT32, AppStoreCallback)",
+    "off": 36
+   },
+   {
+    "name": "vmAppStoreRunCbeAp",
+    "type": "VMBOOLEAN (*)(VMUINT32)",
+    "off": 40
+   },
+   {
+    "name": "vmAppStoreSupportJava",
+    "type": "VMBOOLEAN (*)()",
+    "off": 44
+   },
+   {
+    "name": "vmAppStoreGetPath",
+    "type": "VMUINT16 *(*)()",
+    "off": 48
+   },
+   {
+    "name": "vmGetPhoneType",
+    "type": "PhoneType_e (*)()",
+    "off": 52
+   },
+   {
+    "name": "vmGetAppNumByType",
+    "type": "VMBOOLEAN (*)(AppType_e, VMUINT16 *)",
+    "off": 56
+   },
+   {
+    "name": "vmGetPhoneSupportApType",
+    "type": "VMUINT32 (*)()",
+    "off": 60
+   },
+   {
+    "name": "vmAppGetHasLocalIcon",
+    "type": "VMBOOLEAN (*)(VMUINT32, AppType_e)",
+    "off": 64
+   },
+   {
+    "name": "vmAppRunApByIdAndName",
+    "type": "VMBOOLEAN (*)(VMUINT32, AppType_e, VMUINT16 *, AppStoreCallback, ApStartSource)",
+    "off": 68
+   },
+   {
+    "name": "vmAppAddShortCutMenu",
+    "type": "VMBOOLEAN (*)(AppDataType *, VMUINT16)",
+    "off": 72
+   },
+   {
+    "name": "vmAppDelShortCutMenu",
+    "type": "VMBOOLEAN (*)(AppDataType *, VMUINT16)",
+    "off": 76
+   },
+   {
+    "name": "vmAppDownLoadAppFile",
+    "type": "VMBOOLEAN (*)(VMUINT16 *, char *, VMUINT32, DownLoadStateCallBackType)",
+    "off": 80
+   },
+   {
+    "name": "vmGetAppDownUrl",
+    "type": "void (*)(char *, VMUINT8, VMUINT32, VMUINT8, VMUINT8, VMCHAR *)",
+    "off": 84
+   },
+   {
+    "name": "vmAppPreLoadCbeByNameAndId",
+    "type": "VMUINT8 (*)(VMUINT32, VMUINT16 *)",
+    "off": 88
+   },
+   {
+    "name": "vmParseDownloadAppFile",
+    "type": "VMBOOLEAN (*)(VMUINT16 *, AppDataType *)",
+    "off": 92
+   },
+   {
+    "name": "vmApsStopDownloadFile",
+    "type": "VMBOOLEAN (*)()",
+    "off": 96
+   },
+   {
+    "name": "vmAppQueryStcExist",
+    "type": "VMBOOLEAN (*)(AppInfoType *)",
+    "off": 100
+   },
+   {
+    "name": "vmPreCheckInstallAppPlace",
+    "type": "SpaceStatus (*)()",
+    "off": 104
+   },
+   {
+    "name": "vmGetInstallFileSystem",
+    "type": "VmFileDevType (*)()",
+    "off": 108
+   },
+   {
+    "name": "vmSetInstallFileSystem",
+    "type": "void (*)(VmFileDevType)",
+    "off": 112
+   },
+   {
+    "name": "vmSetRunAppFileSystem",
+    "type": "void (*)(VmFileDevType)",
+    "off": 116
+   },
+   {
+    "name": "vmGetRunAppFileSystem",
+    "type": "VmFileDevType (*)()",
+    "off": 120
+   },
+   {
+    "name": "vmAutoSelectAppDownPlace",
+    "type": "VMBOOLEAN (*)()",
+    "off": 124
+   },
+   {
+    "name": "vmGetApsVerNum",
+    "type": "VMUINT8 (*)()",
+    "off": 128
+   },
+   {
+    "name": "vmReadAppStoreCbeVersion",
+    "type": "VMBOOLEAN (*)(void *, VMUINT16)",
+    "off": 132
+   },
+   {
+    "name": "vmWriteAppStoreCbeVersion",
+    "type": "VMBOOLEAN (*)(const void *, VMUINT16)",
+    "off": 136
+   },
+   {
+    "name": "vmGetSecurityCode",
+    "type": "VMBOOLEAN (*)(VMSTR, VMUINT16)",
+    "off": 140
+   },
+   {
+    "name": "vmGetSecurityCodeEx",
+    "type": "VMBOOLEAN (*)(VMSTR, VMUINT16)",
+    "off": 144
+   },
+   {
+    "name": "vmSetAppStoreName",
+    "type": "void (*)(VMWSTR)",
+    "off": 148
+   },
+   {
+    "name": "vmGetAppStoreName",
+    "type": "VMWSTR (*)()",
+    "off": 152
+   }
+  ],
+  "indent": 3
+ },
+ {
+  "name": "VmManagerTag",
+  "size": 212,
+  "members": [
+   {
+    "name": "VMInitIoManager",
+    "type": "void (*)(",
+    "off": 0
+   },
+   {
+    "name": "VMGetIoManager",
+    "type": "VmIoManager *(*)()",
+    "off": 4
+   },
+   {
+    "name": "VMInitLcdManager",
+    "type": "void (*)(",
+    "off": 8
+   },
+   {
+    "name": "VMGetLcdManager",
+    "type": "VmLcdManager *(*)()",
+    "off": 12
+   },
+   {
+    "name": "VMInitTimeManager",
+    "type": "void (*)(",
+    "off": 16
+   },
+   {
+    "name": "VMGetTimeManager",
+    "type": "VmTimeManager *(*)()",
+    "off": 20
+   },
+   {
+    "name": "VMInitCtrlManager",
+    "type": "void (*)(",
+    "off": 24
+   },
+   {
+    "name": "VMGetCtrlManager",
+    "type": "VmCtrlManager *(*)()",
+    "off": 28
+   },
+   {
+    "name": "VMInitMemoryManager",
+    "type": "void (*)(",
+    "off": 32
+   },
+   {
+    "name": "VMGetMemoryManager",
+    "type": "VmMemoryManager *(*)()",
+    "off": 36
+   },
+   {
+    "name": "VMInitBillingManager",
+    "type": "void (*)(",
+    "off": 40
+   },
+   {
+    "name": "VMGetBillingManager",
+    "type": "VmBillingManager *(*)()",
+    "off": 44
+   },
+   {
+    "name": "VMInitScreenManager",
+    "type": "void (*)(",
+    "off": 48
+   },
+   {
+    "name": "VMGetScreenManager",
+    "type": "VmScreenManager *(*)()",
+    "off": 52
+   },
+   {
+    "name": "VMInitNetManager",
+    "type": "void (*)(",
+    "off": 56
+   },
+   {
+    "name": "VMGetNetManager",
+    "type": "VmNetManager *(*)()",
+    "off": 60
+   },
+   {
+    "name": "VMInitUcs2StrManager",
+    "type": "void (*)(",
+    "off": 64
+   },
+   {
+    "name": "VMGetUcs2StrManager",
+    "type": "VmUcs2StrManager *(*)()",
+    "off": 68
+   },
+   {
+    "name": "VMInitSysManager",
+    "type": "void (*)(",
+    "off": 72
+   },
+   {
+    "name": "VMGetSysManager",
+    "type": "VmSysManager *(*)()",
+    "off": 76
+   },
+   {
+    "name": "VMInitDFScriptManager",
+    "type": "void (*)(",
+    "off": 80
+   },
+   {
+    "name": "VMGetDFScriptManager",
+    "type": "VmDFScriptManager *(*)()",
+    "off": 84
+   },
+   {
+    "name": "VMInitGameLcdManager",
+    "type": "void (*)(",
+    "off": 88
+   },
+   {
+    "name": "VMGetGameLcdManager",
+    "type": "VmGameLcdManager *(*)()",
+    "off": 92
+   },
+   {
+    "name": "VMInitGameUtilManager",
+    "type": "void (*)(",
+    "off": 96
+   },
+   {
+    "name": "VMGetGameUtilManager",
+    "type": "VmGameUtilManager *(*)()",
+    "off": 100
+   },
+   {
+    "name": "VMInitDFEnginelManager",
+    "type": "void (*)(",
+    "off": 104
+   },
+   {
+    "name": "VMGetDFEnginelManager",
+    "type": "VmDFEnginelManager *(*)()",
+    "off": 108
+   },
+   {
+    "name": "VMInitNetAppManager",
+    "type": "void (*)(",
+    "off": 112
+   },
+   {
+    "name": "VMGetNetAppManager",
+    "type": "VmNetAppManager *(*)()",
+    "off": 116
+   },
+   {
+    "name": "VMInitAudioManager",
+    "type": "void (*)(",
+    "off": 120
+   },
+   {
+    "name": "VMGetAudioManager",
+    "type": "VmAudioManager *(*)()",
+    "off": 124
+   },
+   {
+    "name": "VMInitGameManagerOld",
+    "type": "void (*)(void *)",
+    "off": 128
+   },
+   {
+    "name": "VMGetGameManagerOld",
+    "type": "void *(*)()",
+    "off": 132
+   },
+   {
+    "name": "VMInitManager",
+    "type": "void (*)(",
+    "off": 136
+   },
+   {
+    "name": "vMInitGSensorManager",
+    "type": "void (*)(",
+    "off": 140
+   },
+   {
+    "name": "vMGetGSensorManager",
+    "type": "VmGSensorManager *(*)()",
+    "off": 144
+   },
+   {
+    "name": "vMInitVmStdManager",
+    "type": "void (*)(",
+    "off": 148
+   },
+   {
+    "name": "vMGetVmStdManager",
+    "type": "VmStdManager *(*)()",
+    "off": 152
+   },
+   {
+    "name": "vMInitDlLoadManager",
+    "type": "void (*)(",
+    "off": 156
+   },
+   {
+    "name": "vMGetDlLoadManager",
+    "type": "VmDlLoadManager *(*)()",
+    "off": 160
+   },
+   {
+    "name": "vMGetDlRsManager",
+    "type": "VmDlResourceManager *(*)()",
+    "off": 164
+   },
+   {
+    "name": "vMInitDlRsManager",
+    "type": "void (*)(VmDlResourceManager *)",
+    "off": 168
+   },
+   {
+    "name": "vMGetDlImageManager",
+    "type": "VmDlImageManager *(*)()",
+    "off": 172
+   },
+   {
+    "name": "vMInitDlImageManager",
+    "type": "void (*)(VmDlImageManager *)",
+    "off": 176
+   },
+   {
+    "name": "vMInitVmImManager",
+    "type": "void (*)(",
+    "off": 180
+   },
+   {
+    "name": "vMGetVmImManager",
+    "type": "VmImManager *(*)()",
+    "off": 184
+   },
+   {
+    "name": "vMInitTencentQQManager",
+    "type": "void (*)(",
+    "off": 188
+   },
+   {
+    "name": "vMInitQQIdleManager",
+    "type": "void (*)(void *)",
+    "off": 192
+   },
+   {
+    "name": "VmInitVideoManager",
+    "type": "void (*)(",
+    "off": 196
+   },
+   {
+    "name": "VmGetVideoManager",
+    "type": "VmVideoManager *(*)()",
+    "off": 200
+   },
+   {
+    "name": "VmGetDlWPayManager",
+    "type": "VmDLWPayManager *(*)()",
+    "off": 204
+   },
+   {
+    "name": "vMInitEmailIdleManager",
+    "type": "void (*)(void *)",
+    "off": 208
+   }
+  ],
+  "indent": 3
+ }
+]
