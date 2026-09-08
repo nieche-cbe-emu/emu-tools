@@ -2,7 +2,7 @@
 """tools/sessdump.py <module.cbe> [帧数] [--native] —— 逐帧指纹。
 
 默认走 `emu.host.Session`（Python 参照实现）；给 `--native` 就改走
-`emu.native.NativeSession`（ctypes 接 Rust 核心）。同一段驱动代码开两边，
+`nieche.NiecheSession`（ctypes 接 Rust 核心）。同一段驱动代码开两边，
 所以两次输出该逐字节相同——差一点就是 ctypes 那层绑错了。
 
 **这是 Session 这一层的参照实现。** spec/baseline 是直驱 Runtime 生成的，
@@ -40,8 +40,10 @@ def main():
     n = int(args[1]) if len(args) > 1 else 60
     native = "--native" in sys.argv
     if native:
-        from emu.native import NativeSession
-        s = NativeSession(args[0], audio=False)
+        sys.path.insert(0, os.path.join(
+            os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "rust", "python"))
+        from nieche import NiecheSession
+        s = NiecheSession(args[0], audio=False)
     else:
         s = Session(args[0], audio=False)
     s.boot()

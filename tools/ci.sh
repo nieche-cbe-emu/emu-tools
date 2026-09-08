@@ -66,7 +66,7 @@ p=0; for f in assets/cbe/*.CBE assets/cbe/*.cbe; do [ -e "$f" ] || continue
   h=$(mktemp -d); NIECHE_HOME=$h python3 tools/sessdump.py "$f" 20 > "$TMP/py.txt" 2>/dev/null
   NIECHE_HOME=$h python3 tools/sessdump.py "$f" 20 --native > "$TMP/rs.txt" 2>/dev/null; rm -rf "$h"
   diff -q "$TMP/py.txt" "$TMP/rs.txt" >/dev/null && p=$((p+1)); done
-check "emu/native.py 绑定正确" "$TOTAL" "$p"
+check "nieche.py 绑定正确" "$TOTAL" "$p"
 
 step "阶段 05：两个 engine 进程对拍"
 r=$(./tools/enginediff.sh 40 2>/dev/null | tail -1 | grep -oE '[0-9]+ / [0-9]+')
