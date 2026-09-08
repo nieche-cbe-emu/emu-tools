@@ -59,3 +59,20 @@ if __name__ == "__main__":
     rt = to_map(make())
     print("像素:", rt.fb.nonblank(), "->", shot(rt, "arrived"))
     print("文字:", texts(rt))
+
+def to_field(rt=None, extra=300):
+
+    import io, contextlib
+    rt = rt or make()
+    with contextlib.redirect_stdout(io.StringIO()):
+        rt.boot(); rt.app_start()
+        for _ in range(25): rt.frame()
+        touch(rt, *SKIP)
+        for _ in range(40): rt.frame()
+        touch(rt, *SELECT)
+        for _ in range(60): rt.frame()
+        touch(rt, *CONFIRM)
+        for _ in range(300): rt.frame()
+        touch(rt, 120, 200)
+        for _ in range(extra): rt.frame()
+    return rt

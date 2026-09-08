@@ -11,8 +11,11 @@ stdout 分组，小端：
 stdin 每行一个 JSON：
     {"keys": 掩码}                     当前按住的位
     {"touch": [x, y, "down|move|up"]}
+    {"soft": "left|right"}             软键：先戳屏幕角落，游戏没接住再补发位
     {"fps": 30}
     {"quit": true}
+命令行还有一个 --vclock：把长按连发用的时钟换成"帧号 / fps"。
+**只给对拍用**——那是这一层唯一的不确定来源，不固定的话两次跑都不一样。
 stdout 还有一路音频事件：
     "AUD0" u32 长度 + UTF-8 的 JSON，{"op":"play","path":…,"loop":…} / {"op":"stop"}
     ——MIDI 得靠系统合成器，Python 侧播不了，所以转给原生外壳去发声。
@@ -26,6 +29,7 @@ out = sys.stdout.buffer
 out_lock = threading.Lock()
 
 class ClientGone(Exception):
+    pass
 
 def emit(tag, payload, *extra):
     with out_lock:
@@ -42,13 +46,11 @@ def emit(tag, payload, *extra):
 
 class Engine:
 
-    def __init__(self, path, fps):
+    def __init__(self, path, fps, vclock=False):
         self.sess = Session(path, audio="--no-audio" not in sys.argv)
-        if "--no-audio" not in sys.argv:
-            self.sess.rt.audio.on_event = lambda e: emit(
-                b"AUD0", json.dumps(e, ensure_ascii=False).encode())
-        self.mod = self.sess.mod
-        self.rt = self.sess.rt
+
+        self.vclock = vclock
+
         self.fps = fps
         self.running = True
         self.lock = threading.Lock()
@@ -71,6 +73,8 @@ class Engine:
                 if "touch" in d:
                     x, y, st = d["touch"]
                     self.sess.set_touch(int(x), int(y), st)
+                if "soft" in d:
+                    self.sess.soft_key(d["soft"], bool(d.get("down", True)))
                 if "fps" in d:
                     self.fps = max(1, min(int(d["fps"]), 240))
                 if d.get("quit"):
@@ -78,11 +82,11 @@ class Engine:
                     return
 
     def loop(self):
-        fb = self.rt.fb
         while self.running:
             t = time.time()
             with self.lock:
-                px = self.sess.step()
+                px = self.sess.step(
+                    now=self.sess.frame_no / self.fps if self.vclock else None)
             for e in self.sess.take_events():
                 kind = e.get("kind")
                 if kind == "audio":
@@ -92,15 +96,16 @@ class Engine:
                     self.running = False
                 elif kind == "log":
                     emit(b"LOG0", e.get("text", "").encode("utf-8", "replace"))
+            w, h = self.sess.size
             emit(b"FRM0", px,
-                 struct.pack("<I", self.sess.frame_no), struct.pack("<HH", fb.w, fb.h))
+                 struct.pack("<I", self.sess.frame_no), struct.pack("<HH", w, h))
             time.sleep(max(0, 1.0 / self.fps - (time.time() - t)))
 
 if __name__ == "__main__":
     fps = int(sys.argv[sys.argv.index("--fps") + 1]) if "--fps" in sys.argv else 30
-    eng = Engine(sys.argv[1], fps)
+    eng = Engine(sys.argv[1], fps, vclock="--vclock" in sys.argv)
     eng.boot()
-    emit(b"LOG0", f"{eng.mod.name} 已引导，screens={len(eng.rt.screens)}".encode())
+    emit(b"LOG0", f"{eng.sess.name} 已引导，screens={eng.sess.screens}".encode())
     threading.Thread(target=eng.reader, daemon=True).start()
     try:
         eng.loop()
