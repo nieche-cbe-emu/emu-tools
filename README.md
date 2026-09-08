@@ -21,7 +21,9 @@ spec/vm_managers.json  从固件 DWARF 导出的宿主接口规格
 
 ## 双轨差分
 
-Python 是参照实现，Rust 必须逐帧对上。四层比对，配合 `tools/ci.sh` 一条命令跑完：
+[emu-core-py](https://github.com/nieche-cbe-emu/emu-core-py) 是参照实现，
+[emu-core-rs](https://github.com/nieche-cbe-emu/emu-core-rs) 是发布产物，
+后者必须逐帧对上前者。四层比对，配合 `tools/ci.sh` 一条命令跑完：
 
 ```
 tools/rsdiff.sh      画面 + 宿主调用序列 + 调用次数
