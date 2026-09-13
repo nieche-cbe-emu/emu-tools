@@ -1,5 +1,5 @@
 
-"""tools/fontgen/bdf2cbef.py <旧 font12.cbef> <输出.cbef> <字体.bdf>...
+"""tools/fontgen/bdf2cbef.py <旧 font12.cbef> <输出.cbef> [--unifont unifont.hex] <字体.bdf>...
 
 把 12px 点阵字体（BDF）转成模拟器的 CBEF 字库。
 
@@ -9,11 +9,17 @@ mkfont.swift 是拿 CoreText 把矢量字体硬缩到 12 像素再二值化，�
 GB2312 94x94 槽位），只换字形。
 
 可以给多个 BDF，按顺序取第一个有这个字的（同一字体的简中、繁中、日文版
-各自覆盖的符号不一样）。**全都缺的字沿用旧字库的字形**，不留空白——空白在游戏里看起来像"字没画出来"，
-比字形风格不统一更糟。
+各自覆盖的符号不一样）。BDF 里都没有的字依次找：symbols12.py 手绘的全角数学符号、
+Unifont 压到 12px 的字形（hex2cell.py）。**再没有才沿用旧字库的字形**，不留空白——
+空白在游戏里看起来像"字没画出来"，比字形风格不统一更糟。
 """
+import os
 import struct
 import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import hex2cell
+import symbols12
 
 AW, AH, HW, HH = 6, 12, 12, 12
 
@@ -71,8 +77,14 @@ def main():
     if len(sys.argv) < 4:
         print(__doc__.strip().splitlines()[0], file=sys.stderr)
         return 2
+    args = sys.argv[3:]
+    uni_path = None
+    if "--unifont" in args:
+        k = args.index("--unifont")
+        uni_path = args[k + 1]
+        del args[k:k + 2]
     glyphs, ascent = {}, None
-    for bdf in reversed(sys.argv[3:]):
+    for bdf in reversed(args):
         g, ascent = parse_bdf(bdf)
         glyphs.update(g)
     old = open(sys.argv[1], "rb").read()
@@ -95,6 +107,18 @@ def main():
 
     hanzi_out = bytearray()
     miss_h, total = [], 0
+    extra = {}
+    if uni_path:
+        want = set()
+        for i in range(n_hanzi):
+            hi, lo = divmod(i, 94)
+            try:
+                want.add(ord(bytes([hi + 0xA1, lo + 0xA1]).decode("gb2312")))
+            except UnicodeDecodeError:
+                pass
+        uni = hex2cell.load_hex(uni_path, want - set(glyphs))
+        extra = {cp: hex2cell.hanzi_cell(*g) for cp, g in uni.items()}
+    n_sym = n_uni = 0
     for i in range(n_hanzi):
         hi, lo = divmod(i, 94)
         try:
@@ -106,13 +130,20 @@ def main():
         g = glyphs.get(ord(ch))
         if g:
             hanzi_out += pack(cell(g, ascent, HW, HH), HW)
+        elif ch in symbols12.GLYPHS:
+            n_sym += 1
+            hanzi_out += pack(symbols12.cell(ch), HW)
+        elif ord(ch) in extra:
+            n_uni += 1
+            hanzi_out += pack(extra[ord(ch)], HW)
         else:
             miss_h.append(ch)
             hanzi_out += old_hanzi[i * h_len:(i + 1) * h_len]
 
     with open(sys.argv[2], "wb") as f:
         f.write(old[:18] + ascii_out + hanzi_out)
-    print(f"ASCII 缺 {miss_a}；GB2312 {total} 字，缺 {len(miss_h)} {''.join(miss_h[:40])}")
+    print(f"ASCII 缺 {miss_a}；GB2312 {total} 字，手绘符号 {n_sym}，Unifont 补 {n_uni}，"
+          f"仍缺 {len(miss_h)} {''.join(miss_h[:40])}")
     return 0
 
 if __name__ == "__main__":
