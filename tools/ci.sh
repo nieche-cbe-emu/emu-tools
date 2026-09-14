@@ -28,7 +28,7 @@ printf '   · %s 个测试二进制，%s 个用例全过\n' "$bins" "$cases"
 
 step "Python 参照实现回归"
 h=$(mktemp -d); r=$(NIECHE_HOME=$h timeout 1800 python3 tools/batch.py 2>&1 | tail -1); rm -rf "$h"
-check "跑进主循环" "28/$TOTAL 个模块跑进主循环" "$r"
+check "跑进主循环" "29/$TOTAL 个模块跑进主循环" "$r"
 
 step "阶段 02：容器 / LZ / 图片解码"
 p=0; for f in assets/cbe/*.CBE assets/cbe/*.cbe; do [ -e "$f" ] || continue

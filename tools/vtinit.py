@@ -40,6 +40,7 @@ def main(fname, base_reg_is_r0=True):
 
     lit = {}
     base = {ARM_REG_R0: 0}
+    konst = {}
     slots = {}
     for i in md.disasm(code, va & ~1):
         if i.id == 0:
@@ -54,6 +55,16 @@ def main(fname, base_reg_is_r0=True):
             continue
         if i.id == ARM_INS_STR and len(ops) == 2 and ops[1].type == ARM_OP_MEM           and ops[1].mem.base in base and ops[0].reg in lit:
             slots[base[ops[1].mem.base] + ops[1].mem.disp] = lit[ops[0].reg]
+            continue
+        if i.mnemonic.startswith('mov') and len(ops) == 2           and ops[1].type == ARM_OP_IMM:
+            d = ops[0].reg
+            lit.pop(d, None); base.pop(d, None)
+            konst[d] = ops[1].imm
+            continue
+        if i.mnemonic.startswith('lsl') and len(ops) == 3 and ops[1].type == ARM_OP_REG           and ops[1].reg in konst and ops[2].type == ARM_OP_IMM:
+            d = ops[0].reg
+            lit.pop(d, None); base.pop(d, None)
+            konst[d] = konst[ops[1].reg] << ops[2].imm
             continue
         if i.mnemonic.startswith('mov') and len(ops) == 2           and ops[1].type == ARM_OP_REG:
             d, s = ops[0].reg, ops[1].reg
@@ -73,11 +84,20 @@ def main(fname, base_reg_is_r0=True):
                 base[d] = base[ops[1].reg] + ops[2].imm
                 lit.pop(d, None)
                 continue
+            if len(ops) == 3 and ops[1].type == ARM_OP_REG and ops[2].type == ARM_OP_REG:
+                a, b = ops[1].reg, ops[2].reg
+                if a in konst and b in base:
+                    a, b = b, a
+                if a in base and b in konst:
+                    base[d] = base[a] + konst[b]
+                    lit.pop(d, None)
+                    continue
             lit.pop(d, None); base.pop(d, None)
             continue
         for op in ops:
             if op.type == ARM_OP_REG and op.access & CS_AC_WRITE:
                 lit.pop(op.reg, None)
+                konst.pop(op.reg, None)
                 if op.reg != ARM_REG_R0:
                     base.pop(op.reg, None)
 
