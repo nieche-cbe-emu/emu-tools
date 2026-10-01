@@ -87,3 +87,7 @@ spec/vm_managers.json    从固件 DWARF 导出的宿主接口规格
 ## 说明
 
 多数工具需要手机固件或游戏数据才能发挥作用，两者均不在本仓库，也不提供。
+
+## 许可证
+
+GPL-2.0，见 LICENSE。第三方组件逐项见 THIRD-PARTY.md。

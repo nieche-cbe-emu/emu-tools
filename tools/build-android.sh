@@ -10,7 +10,7 @@ source "$DEV/env.sh"
 TC="$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/darwin-x86_64/bin"
 STUB="$DEV/android/stub-libs"
 RTLIB="$ANDROID_NDK_HOME/toolchains/llvm/prebuilt/darwin-x86_64/lib/clang/17/lib/linux"
-export PATH="/opt/homebrew/Cellar/rustup/1.29.0_2/bin:/opt/homebrew/bin:$TC:$PATH"
+export PATH="/opt/homebrew/opt/rustup/bin:/opt/homebrew/bin:$TC:$PATH"
 export ANDROID_NDK_ROOT="$ANDROID_NDK_HOME" ANDROID_NDK="$ANDROID_NDK_HOME"
 
 rm -rf "$STUB"; mkdir -p "$STUB/armv7"
