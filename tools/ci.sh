@@ -33,6 +33,9 @@ check "跑进主循环" "29/$TOTAL 个模块跑进主循环" "$r"
 step "路径规范化（沙盒不能被 .. 逃出去）"
 r=$(python3 tools/vfstest.py 2>&1 | tail -1); check "Python 侧" "ok" "$r"
 
+step "音频时长（决定 vMAduioGetState 什么时候答停）"
+r=$(python3 tools/audiotest.py 2>&1 | tail -1); check "Python 侧" "ok" "$r"
+
 step "阶段 02：容器 / LZ / 图片解码"
 p=0; for f in assets/cbe/*.CBE assets/cbe/*.cbe; do [ -e "$f" ] || continue
   python3 tools/dumpcontainer.py "$f" > "$TMP/py.txt" 2>&1
