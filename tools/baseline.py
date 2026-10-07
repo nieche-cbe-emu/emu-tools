@@ -41,6 +41,7 @@ import contextlib
 import glob
 import io
 import os
+import tempfile
 import sys
 import zlib
 
@@ -60,6 +61,8 @@ def apply_input(rt, i):
         rt.release()
 
 def run(path, frames):
+
+    os.environ["NIECHE_HOME"] = tempfile.mkdtemp(prefix="nieche-baseline-")
     m = cbelib.load(path)
     rt = Runtime(m, trace=False, quiet_log=True, trace_fs=False, audio=False)
     rows = []
