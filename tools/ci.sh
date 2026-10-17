@@ -36,6 +36,11 @@ r=$(python3 tools/vfstest.py 2>&1 | tail -1); check "Python 侧" "ok" "$r"
 step "音频时长（决定 vMAduioGetState 什么时候答停）"
 r=$(python3 tools/audiotest.py 2>&1 | tail -1); check "Python 侧" "ok" "$r"
 
+step "macOS 镜像源安全（文件名不能写出库外、令牌不外发）"
+r=$( (cd swiftapp && swiftc -O -parse-as-library MirrorSafety.swift tests/mirror_safety_test.swift \
+        -o "$TMP/mirror_safety_test" 2>&1 >/dev/null && "$TMP/mirror_safety_test") | tail -1)
+check "MirrorSafety" "ok" "$r"
+
 step "阶段 02：容器 / LZ / 图片解码"
 p=0; for f in assets/cbe/*.CBE assets/cbe/*.cbe; do [ -e "$f" ] || continue
   python3 tools/dumpcontainer.py "$f" > "$TMP/py.txt" 2>&1

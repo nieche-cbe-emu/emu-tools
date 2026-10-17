@@ -48,4 +48,10 @@ for a in arm64-v8a armeabi-v7a; do
   if [ "$n" = "0" ]; then printf "   %-14s 已解决\n" "$a"
   else printf "   %-14s 仍未定义 —— 装上去会 dlopen 失败\n" "$a"; bad=1; fi
 done
+
+if [ "$bad" = "0" ]; then
+  mkdir -p "$ROOT/emu-android/app/src/main/assets"
+  python3 "$ROOT/tools/core_stamp.py" > "$ROOT/emu-android/app/src/main/assets/core.stamp"
+  echo "核心指纹：$(cat "$ROOT/emu-android/app/src/main/assets/core.stamp")"
+fi
 exit $bad
