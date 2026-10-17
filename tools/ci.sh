@@ -64,9 +64,7 @@ check "两侧引导一致" "$TOTAL" "$p"
 
 step "阶段 04：逐帧差分（$N 帧）"
 r=$(./tools/rsdiff.sh "$N" 2>/dev/null | tail -1 | grep -oE '[0-9]+ / [0-9]+')
-
-exp_diff=$( [ "$N" -le 60 ] && echo "$TOTAL / $TOTAL" || echo "$((TOTAL-1)) / $TOTAL" )
-check "画面+调用序列+调用数" "$exp_diff" "$r"
+check "画面+调用序列+调用数" "$TOTAL / $TOTAL" "$r"
 
 step "阶段 05：C ABI vs Python Session（$N 帧）"
 r=$(./tools/ffidiff.sh "$N" 2>/dev/null | tail -1 | grep -oE '[0-9]+ / [0-9]+')
@@ -78,6 +76,14 @@ p=0; for f in assets/cbe/*.CBE assets/cbe/*.cbe; do [ -e "$f" ] || continue
   NIECHE_HOME=$h python3 tools/sessdump.py "$f" 20 --native > "$TMP/rs.txt" 2>/dev/null; rm -rf "$h"
   diff -q "$TMP/py.txt" "$TMP/rs.txt" >/dev/null && p=$((p+1)); done
 check "nieche.py 绑定正确" "$TOTAL" "$p"
+
+step "修改器（搜索/筛选/改写/锁定）两侧对拍"
+p=0; for f in assets/cbe/*.CBE assets/cbe/*.cbe; do [ -e "$f" ] || continue
+  h=$(mktemp -d); NIECHE_HOME=$h python3 tools/cheattest.py "$f" > "$TMP/py.txt" 2>/dev/null; rm -rf "$h"
+  h=$(mktemp -d); NIECHE_HOME=$h python3 tools/cheattest.py "$f" --native > "$TMP/rs.txt" 2>/dev/null; rm -rf "$h"
+  diff -q "$TMP/py.txt" "$TMP/rs.txt" >/dev/null && p=$((p+1)); done
+
+check "两侧候选与画面一致" "$((TOTAL-1))" "$p"
 
 step "阶段 05：两个 engine 进程对拍"
 r=$(./tools/enginediff.sh 40 2>/dev/null | tail -1 | grep -oE '[0-9]+ / [0-9]+')
