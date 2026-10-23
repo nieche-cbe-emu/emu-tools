@@ -7,6 +7,10 @@ tools/keyprobe.py <module.cbe> [--frames 6] [--bits 16]
 报告哪些位是"有反应"的，以及变化幅度（改变的像素数）。
 """
 import sys, os, io, contextlib, hashlib
+
+if not os.environ.get("NIECHE_HOME"):
+    import tempfile
+    os.environ["NIECHE_HOME"] = tempfile.mkdtemp(prefix="nieche-tool-")
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import cbelib
 from emu.runtime import Runtime

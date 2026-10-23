@@ -1,6 +1,10 @@
 
 """tools/batch.py [帧数] — 把 assets/cbe 下所有模块跑一遍，汇总走到哪一步"""
 import sys, os, io, glob, contextlib, traceback
+
+if not os.environ.get("NIECHE_HOME"):
+    import tempfile
+    os.environ["NIECHE_HOME"] = tempfile.mkdtemp(prefix="nieche-tool-")
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import cbelib, emu.api as A
 from emu.runtime import Runtime

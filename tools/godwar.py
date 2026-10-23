@@ -4,6 +4,10 @@
 菜单和软键**只吃触摸**，按键位一律无效；坐标是实测出来的，写死在这里。
 """
 import io, os, sys, contextlib
+
+if not os.environ.get("NIECHE_HOME"):
+    import tempfile
+    os.environ["NIECHE_HOME"] = tempfile.mkdtemp(prefix="nieche-tool-")
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import cbelib
 from emu.runtime import Runtime

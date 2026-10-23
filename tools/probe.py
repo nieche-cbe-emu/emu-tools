@@ -1,6 +1,10 @@
 
 """tools/probe.py <module.cbe> — boot + app_start，然后扫描内存里被模块登记的回调指针"""
 import sys, os, struct, collections
+
+if not os.environ.get("NIECHE_HOME"):
+    import tempfile
+    os.environ["NIECHE_HOME"] = tempfile.mkdtemp(prefix="nieche-tool-")
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import cbelib
 from emu.runtime import Runtime

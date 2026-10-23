@@ -9,6 +9,10 @@ import io
 import os
 import sys
 
+if not os.environ.get("NIECHE_HOME"):
+    import tempfile
+    os.environ["NIECHE_HOME"] = tempfile.mkdtemp(prefix="nieche-tool-")
+
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 import cbelib
 from emu.runtime import Runtime
