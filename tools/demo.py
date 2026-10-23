@@ -22,7 +22,6 @@ every = int(sys.argv[sys.argv.index("--every") + 1]) if "--every" in sys.argv el
 m = cbelib.load(path)
 rt = Runtime(m, trace=False, quiet_log=False, trace_fs=False,
              audio="--audio" in sys.argv)
-rt.mach.BUDGET = 40_000_000
 out = f"out/{m.name}/demo"
 os.makedirs(out, exist_ok=True)
 print(f"== {m.name} ==")

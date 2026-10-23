@@ -28,7 +28,6 @@ for p in sorted(glob.glob("assets/cbe/*.CBE") + glob.glob("assets/cbe/*.cbe")):
     try:
         m = cbelib.load(p)
         rt = Runtime(m, trace=False, quiet_log=True, trace_fs=False)
-        rt.mach.BUDGET = 40_000_000
         with contextlib.redirect_stdout(io.StringIO()):
             rt.boot()
             boot_err = rt.mach.exit_reason

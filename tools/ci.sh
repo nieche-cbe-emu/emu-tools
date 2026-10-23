@@ -4,7 +4,9 @@ set -u
 cd "$(dirname "$0")/.."
 export PATH="/opt/homebrew/opt/rustup/bin:$PATH"
 export CARGO_TARGET_DIR="${CARGO_TARGET_DIR:-$HOME/.cache/nieche-rust}"
-N="${1:-60}"
+FULL=0; ARGS=()
+for a in "$@"; do case "$a" in --full) FULL=1 ;; *) ARGS+=("$a") ;; esac; done
+N="${ARGS[0]:-60}"
 fail=0
 
 TOTAL=$(ls assets/cbe/*.CBE assets/cbe/*.cbe 2>/dev/null | wc -l | tr -d ' ')
@@ -18,14 +20,16 @@ check() {
 }
 
 step "Rust 构建与单元测试"
-(cd rust && cargo build --release 2>&1 | tail -2)
+RS=$(bash tools/rustsrc.sh)
+(cd "$RS" && cargo build --release 2>&1 | tail -2)
 
-out=$(cd rust && cargo test --release 2>&1); rc=$?
+out=$(cd "$RS" && cargo test --release 2>&1); rc=$?
 bins=$(printf '%s\n' "$out" | grep -c "test result: ok")
 cases=$(printf '%s\n' "$out" | sed -n 's/^test result: ok\. \([0-9]*\) passed.*/\1/p' | awk '{s+=$1} END{print s+0}')
 check "cargo test 退出码" "0" "$rc"
 printf '   · %s 个测试二进制，%s 个用例全过\n' "$bins" "$cases"
 
+if [ "$FULL" = 1 ]; then
 step "Python 参照实现回归"
 h=$(mktemp -d); r=$(NIECHE_HOME=$h timeout 1800 python3 tools/batch.py 2>&1 | tail -1); rm -rf "$h"
 check "跑进主循环" "$TOTAL/$TOTAL 个模块跑进主循环" "$r"
@@ -36,11 +40,14 @@ r=$(python3 tools/vfstest.py 2>&1 | tail -1); check "Python 侧" "ok" "$r"
 step "音频时长（决定 vMAduioGetState 什么时候答停）"
 r=$(python3 tools/audiotest.py 2>&1 | tail -1); check "Python 侧" "ok" "$r"
 
+fi
+
 step "macOS 镜像源安全（文件名不能写出库外、令牌不外发）"
 r=$( (cd swiftapp && swiftc -O -parse-as-library MirrorSafety.swift tests/mirror_safety_test.swift \
         -o "$TMP/mirror_safety_test" 2>&1 >/dev/null && "$TMP/mirror_safety_test") | tail -1)
 check "MirrorSafety" "ok" "$r"
 
+if [ "$FULL" = 1 ]; then
 step "阶段 02：容器 / LZ / 图片解码"
 p=0; for f in assets/cbe/*.CBE assets/cbe/*.cbe; do [ -e "$f" ] || continue
   python3 tools/dumpcontainer.py "$f" > "$TMP/py.txt" 2>&1
@@ -62,10 +69,13 @@ p=0; for f in assets/cbe/*.CBE assets/cbe/*.cbe; do [ -e "$f" ] || continue
   diff -q "$TMP/py.txt" "$TMP/rs.txt" >/dev/null && p=$((p+1)); done
 check "两侧引导一致" "$TOTAL" "$p"
 
-step "阶段 04：逐帧差分（$N 帧）"
+fi
+
+step "逐帧差分：Rust 核心 vs 存档基准（$N 帧）"
 r=$(./tools/rsdiff.sh "$N" 2>/dev/null | tail -1 | grep -oE '[0-9]+ / [0-9]+')
 check "画面+调用序列+调用数" "$TOTAL / $TOTAL" "$r"
 
+if [ "$FULL" = 1 ]; then
 step "阶段 05：C ABI vs Python Session（$N 帧）"
 r=$(./tools/ffidiff.sh "$N" 2>/dev/null | tail -1 | grep -oE '[0-9]+ / [0-9]+')
 check "导出层+输入整形" "$TOTAL / $TOTAL" "$r"
@@ -89,6 +99,9 @@ step "阶段 05：两个 engine 进程对拍"
 r=$(./tools/enginediff.sh 40 2>/dev/null | tail -1 | grep -oE '[0-9]+ / [0-9]+')
 check "协议输出一致" "$TOTAL / $TOTAL" "$r"
 
+fi
+
 printf '\n══════════════════════════\n'
-[ "$fail" = "0" ] && echo "双轨验收通过" || echo "双轨验收未通过"
+mode=$([ "$FULL" = 1 ] && echo "双轨验收" || echo "验收")
+[ "$fail" = "0" ] && echo "${mode}通过" || echo "${mode}未通过"
 exit "$fail"

@@ -19,7 +19,6 @@ path = sys.argv[1]
 m = cbelib.load(path)
 rt = Runtime(m, trace=False, quiet_log=True, trace_fs=False,
              audio="--no-audio" not in sys.argv)
-rt.mach.BUDGET = 40_000_000
 print(f"引导 {m.name} …")
 rt.boot()
 rt.app_start()

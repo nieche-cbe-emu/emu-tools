@@ -33,7 +33,7 @@ build() {
   echo "   $dst  $(ls -lh "$dst" | awk '{print $5}')"
 }
 
-cd rust
+cd "$(bash "$ROOT/tools/rustsrc.sh")"
 build aarch64-linux-android   arm64-v8a   "$STUB"       aarch64-linux-android24-clang
 build armv7-linux-androideabi armeabi-v7a "$STUB/armv7" armv7a-linux-androideabi24-clang
 cd ..

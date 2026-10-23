@@ -26,7 +26,6 @@ def run(path, nframes, bits, warm=6):
     results = []
     for b in range(bits):
         rt = Runtime(m, trace=False, quiet_log=True, trace_fs=False)
-        rt.mach.BUDGET = 40_000_000
         with contextlib.redirect_stdout(io.StringIO()):
             rt.boot(); rt.app_start()
             for _ in range(warm):
